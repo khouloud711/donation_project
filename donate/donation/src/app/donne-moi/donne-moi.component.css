@@ -1,0 +1,75 @@
+
+
+section{
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: sans-serif !important;
+  background: url(/assets/images/form.png) no-repeat center center!important;
+  background-size: cover !important;
+  min-height: 100vh !important;
+
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-family: consolas !important;
+}
+
+section h1{
+  text-align: center;
+}
+
+/*button css*/
+.but{
+  position: absolute !important;
+  top: 86% !important;
+  left: 50% !important;
+  transform: translate(-50%,-50%) !important;
+  width: 200px !important;
+  height: 60px !important;
+  text-align: center;
+  line-height: 60px !important;
+  color: #fff !important;
+  font-size: 24px !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  font-family: sans-serif !important;
+  box-sizing: border-box !important;
+  background: linear-gradient(90deg, #345564, #642e4d, #726c33, #345564) !important;
+  background-size: 400% !important;
+  border-radius: 30px !important;
+  z-index: 1 !important;
+}
+
+.but:hover{
+  animation: animate 8s linear infinite !important;
+}
+@keyframes animate{
+  0%{
+    background-position: 0% ;
+  }
+  100%{
+    background-position: 400% ;
+  }
+}
+
+.but:before{
+  content: '' !important;
+  position: absolute !important;
+  top: -5px !important;
+  left: -5px !important;
+  right: -5px !important;
+  bottom: -5px !important;
+  z-index: -1 !important;
+  background: linear-gradient(90deg, #345564, #642e4d, #726c33, #345564) !important;
+  background-size: 400% !important;
+  border-radius: 40px !important;
+  opacity: 0 !important;
+  transition: 0.5s !important;
+}
+.but:hover:before{
+  filter: blur(20px) !important;
+  opacity: 1 !important;
+  animation: animate 8s linear infinite !important;
+}
+
+/*end button css*/

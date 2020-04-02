@@ -1,0 +1,207 @@
+.sec1{
+  /*margin: 0 !important;
+  padding: 0 !important;*/
+  background: url('/assets/images/im1.png') no-repeat center center;
+  background-size: cover;
+  height: calc(155vh - 0px);
+}
+.sec1 .content {
+  color: #fff;
+  top: 50% !important;
+  left: 50% !important;
+  text-align: center !important;
+  margin-bottom: 300px !important;
+
+}
+
+
+
+
+
+
+/*map css*/
+.map_im{
+  width: 50%;
+  float: center;
+  margin: auto;
+  top: 0;
+  left: 0;
+
+}
+.map_im path{
+  fill: #add2a4;
+  stroke: #FFF;
+  stroke-width: 1px;
+  transition: fill 0.3s;
+}
+.map_im path:hover{
+  fill: #28a745;
+}
+/*end map css*/
+
+/*button css*/
+.but{
+  position: absolute !important;
+  top: 257% !important;
+  left: 50% !important;
+  transform: translate(-50%,-50%) !important;
+  width: 200px !important;
+  height: 60px !important;
+  text-align: center;
+  line-height: 60px !important;
+  color: #fff !important;
+  font-size: 24px !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  font-family: sans-serif !important;
+  box-sizing: border-box !important;
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4) !important;
+  background-size: 400% !important;
+  border-radius: 30px !important;
+  z-index: 1 !important;
+}
+
+.but:hover{
+  animation: animate 8s linear infinite !important;
+}
+@keyframes animate{
+  0%{
+    background-position: 0% ;
+  }
+  100%{
+    background-position: 400% ;
+  }
+}
+
+.but:before{
+  content: '' !important;
+  position: absolute !important;
+  top: -5px !important;
+  left: -5px !important;
+  right: -5px !important;
+  bottom: -5px !important;
+  z-index: -1 !important;
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4) !important;
+  background-size: 400% !important;
+  border-radius: 40px !important;
+  opacity: 0 !important;
+  transition: 0.5s !important;
+}
+.but:hover:before{
+  filter: blur(20px) !important;
+  opacity: 1 !important;
+  animation: animate 8s linear infinite !important;
+}
+
+/*end button css*/
+
+/* categ css*/
+.cat{
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 100vh !important;
+  background: #333 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-family: consolas !important;
+}
+
+.container{
+  width:1000px !important;
+  position: relative !important;
+  display: flex !important;
+  justify-content: space-between !important;
+
+
+}
+
+.container .card{
+  position: relative !important;
+  background:#333!important;
+  margin: auto;
+}
+
+.container .card .face{
+  width:300px !important;
+  height: 200px !important;
+  transition:0.5s !important;
+}
+
+.container .card .face.face1{
+  position: relative !important;
+  background:#333 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  z-index: 1 !important;
+  transform: translateY(100px) !important;
+}
+
+.container .card:hover .face.face1{
+  background:#ff0057 !important;
+  transform: translateY(0) !important;
+}
+
+.container .card .face.face1 .content{
+  opacity:0.2 !important;
+  transition: 0.5s !important;
+}
+
+.container .card:hover .face.face1 .content{
+  opacity: 1 !important;
+}
+
+.container .card .face.face1 .content img{
+  max-width: 100px !important;
+
+}
+
+.container .card .face.face1 .content h3{
+  margin:10px 0 0 !important;
+  padding: 0 !important;
+  color: #fff !important;
+  text-align: center !important;
+  font-size: 1.5em !important;
+}
+
+.container .card .face.face2{
+  position: relative !important;
+  background:#fff !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 20px !important;
+  box-sizing: border-box !important;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8) !important;
+  transform: translateY(-100px) !important;
+}
+
+.container .card:hover .face.face2{
+  transform: translateY(0) !important;
+}
+
+.container .card .face.face2 .content p{
+  margin:0 !important;
+  padding: 0 !important;
+}
+
+.container .card .face.face2 .content a{
+  margin:15px 0 0 ;
+  display:inline-block !important;
+  text-decoration: none !important;
+  font-weight: 900 !important;
+  color: #333 !important;
+  padding: 5px !important;
+  border: 1px solid #333 !important;
+
+}
+
+.container .card .face.face2 .content a:hover{
+  background: #333 !important;
+  color: #fff !important ;
+}
+
+/*end categ css*/
+
+
