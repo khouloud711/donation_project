@@ -4,7 +4,7 @@ section{
   margin: 0 !important;
   padding: 0 !important;
   font-family: sans-serif !important;
-  background: url(/assets/images/meuble.jpg) no-repeat center center!important;
+  background: url(/assets/images/meuble.png) no-repeat center center!important;
   background-size: cover !important;
   min-height: 100vh !important;
 
@@ -15,7 +15,7 @@ section{
 }
 .box{
   position: absolute !important;
-  top: -22% !important;
+  top: -25% !important;
   left: 50% !important;
   transform: translate(-50%,50%) !important;
   width: 400px !important;

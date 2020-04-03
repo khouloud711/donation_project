@@ -1,22 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule,routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-//import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-//import { DonMaterielsComponent } from './don-materiels/don-materiels.component';
-//import { DonMeublesComponent } from './don-meubles/don-meubles.component';
-//import { DonAutresComponent } from './don-autres/don-autres.component';
-//import { DonProduitsComponent } from './don-produits/don-produits.component';
-//import { DonVetementsComponent } from './don-vetements/don-vetements.component';
-//import { DonLivresComponent } from './don-livres/don-livres.component';
-//import { CategoriesComponent } from './categories/categories.component';
-//import { AssociationsComponent } from './associations/associations.component';
-//import { DonneMoiComponent } from './donne-moi/donne-moi.component';
+
 
 @NgModule({
   declarations: [
@@ -29,10 +21,15 @@ import { FooterComponent } from './footer/footer.component';
 
 
 
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpModule,
+    HttpClientModule
 
 
 

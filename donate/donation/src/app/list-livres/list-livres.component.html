@@ -1,0 +1,23 @@
+<h1>liste des dons des livres:</h1>
+<br>
+<br>
+
+<div class="container">
+  <div *ngFor="let list_livre of Listlivres">
+    <div class="col-md-3">
+        {{list_livre.nom}}
+    </div>
+
+    <div class="col-md-3">
+      {{list_livre.prenom}}
+    </div>
+
+    <div class="col-md-3">
+    {{list_livre.numero}}
+    </div>
+
+    <div class="col-md-3">
+      {{list_livre.description}}
+    </div>
+  </div>
+</div>

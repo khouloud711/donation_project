@@ -1,30 +1,34 @@
 <section >
   <div class="box">
     <h2>Donner des livres</h2>
-    <form action="">
+    <form (submit)="addList_livres()">
       <div class="inputBox">
-          <input type="text" class="" id=""  required>
+          <input type="text" class="" name="nom" [(ngModel)]="nom" required>
           <label for="" class="">Nom</label>
 
       </div>
       <div class="inputBox">
 
-          <input type="text" class="" id="" required>
+          <input type="text" class="" name="prenom" [(ngModel)]="prenom" required>
           <label for="" class="">Prénom</label>
 
       </div>
       <div class="inputBox">
-              <input type="number" class="" id=""  required>
+              <input type="number" class="" name="numero" [(ngModel)]="numero" required>
               <label for="" class="">Numéro de téléphone </label>
 
             </div>
             <div class="inputBox">
-              <textarea class="" id=""  required></textarea>
+              <textarea class="" name="description" [(ngModel)]="description" required></textarea>
               <label class="">Description</label>
 
           </div>
 
-      <input type="submit" value="Confirmer">
+      <input type="submit" value="Confirmer" >
     </form>
   </div>
 </section>
+
+
+
+

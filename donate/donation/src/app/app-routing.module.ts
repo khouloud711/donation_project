@@ -11,6 +11,7 @@ import { DonMaterielsComponent } from './don-materiels/don-materiels.component';
 import { DonVetementsComponent } from './don-vetements/don-vetements.component';
 import { DonProduitsComponent } from './don-produits/don-produits.component';
 import { DonMeublesComponent } from './don-meubles/don-meubles.component';
+import { ListLivresComponent } from './list-livres/list-livres.component';
 
 
 
@@ -24,8 +25,9 @@ const routes: Routes = [
   { path: 'Don-materiels', component : DonMaterielsComponent},
   { path: 'Don-autres', component : DonAutresComponent},
   { path: 'AssociationMap', component : AssociationsComponent},
-  { path: 'Categories', component : CategoriesComponent,}
+  { path: 'Categories', component : CategoriesComponent},
 
+  { path:'list_livres', component:ListLivresComponent}
 ];
 
 @NgModule({
@@ -36,4 +38,5 @@ export class AppRoutingModule { }
 
 export const routingComponents = [HomeComponent,DonneMoiComponent,AssociationsComponent,
                                   CategoriesComponent,DonLivresComponent,DonMeublesComponent,
-                                  DonProduitsComponent,DonVetementsComponent,DonMaterielsComponent,DonAutresComponent]
+                                  DonProduitsComponent,DonVetementsComponent,DonMaterielsComponent,
+                                  DonAutresComponent,ListLivresComponent]

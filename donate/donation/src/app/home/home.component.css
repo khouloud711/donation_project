@@ -1,9 +1,9 @@
 .sec1{
   /*margin: 0 !important;
   padding: 0 !important;*/
-  background: url('/assets/images/im1.png') no-repeat center center;
+  background: url('/assets/images/home.png') no-repeat center center;
   background-size: cover;
-  height: calc(155vh - 0px);
+  height: calc(90vh - 0px);
 }
 .sec1 .content {
   color: #fff;
@@ -42,7 +42,7 @@
 /*button css*/
 .but{
   position: absolute !important;
-  top: 257% !important;
+  top:195% !important;
   left: 50% !important;
   transform: translate(-50%,-50%) !important;
   width: 200px !important;
