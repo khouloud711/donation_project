@@ -1,6 +1,6 @@
-.sec1{
+/*.sec1{
   /*margin: 0 !important;
-  padding: 0 !important;*/
+  padding: 0 !important;
   background: url('/assets/images/home.png') no-repeat center center;
   background-size: cover;
   height: calc(90vh - 0px);
@@ -19,7 +19,7 @@
 
 
 
-/*map css*/
+/*map css
 .map_im{
   width: 50%;
   float: center;
@@ -39,7 +39,7 @@
 }
 /*end map css*/
 
-/*button css*/
+/*button css
 .but{
   position: absolute !important;
   top:195% !important;
@@ -95,7 +95,7 @@
 
 /*end button css*/
 
-/* categ css*/
+/* categ css
 .cat{
   margin: 0 !important;
   padding: 0 !important;
@@ -203,5 +203,110 @@
 }
 
 /*end categ css*/
+
+
+
+
+
+
+/*start header css*/
+
+
+@media (min-width: 800px) and (max-width: 850px) {
+  .navbar:not(.top-nav-collapse) {
+      background: #1C2331!important;
+  }
+}
+.view,body,html{height:100%}.navbar{background-color:rgba(0,0,0,.2)}.page-footer,.top-nav-collapse{background-color:#1C2331}@media only screen and (max-width:768px){.navbar{background-color:#1C2331}}
+
+
+.heading-underline{
+  width: 3rem !important;
+  height: .2rem !important;
+  background-color: #1ebba3 !important;
+  margin:2rem auto 2rem  !important;
+}
+
+
+/*--- start citaion section---*/
+
+.clients img{
+  width: 100%;
+  border-radius: 50%;
+}
+blockquote .svg-inline--fa {
+  color: #1ebba3 !important;
+  margin: 1rem !important;
+}
+.clients-hr{
+
+  border-top: .06rem solid #1ebba3 !important;
+
+}
+
+
+
+
+
+/*start button css*/
+.btn{
+  border-width: medium !important;
+  border-radius: 0 !important;
+  text-transform: uppercase !important;
+  font-size: 1.2rem !important;
+  padding: .6rem 1.2rem !important;
+  color: white !important;
+  background-color: #1ebba3 !important;
+  border-color: #1ebba3 !important;
+}
+.btn:hover{
+  background-color: #189582 !important;
+  border-color: #189582 !important;
+}
+
+
+
+/*streak img*/
+
+.streak.streak-photo {
+
+  background-repeat: no-repeat;
+  }
+
+
+/*about section*/
+.col-lg-6 {
+  padding: 0  !important;
+}
+
+.about-area{
+	background-color:#222 !important;
+}
+
+.about-right p {
+  display: block !important;
+  margin-block-start: 1em !important;
+  margin-block-end: 1em !important;
+  margin-inline-start: 0px !important;
+  margin-inline-end: 0px !important;
+  font-size: 20px !important;
+  padding: 15px !important;
+  color: #777;
+}
+.about-right h1{
+  color:white !important;
+  margin-bottom:25px !important;
+  padding: 15px;
+  letter-spacing: .1rem;
+  font-size: 40px;
+  font-weight: 700;
+
+}
+.btn{
+  margin-left: 15px;
+}
+
+
+
 
 

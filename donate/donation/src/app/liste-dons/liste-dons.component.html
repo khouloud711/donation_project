@@ -1,0 +1,36 @@
+<!--Author box-->
+<section>
+
+  <div class="jumbotron p-5 text-center text-md-left author-box wow fadeIn" data-wow-delay="0.3s" *ngFor="let list_don of Listdons">
+    <!--Name-->
+    <h4 class="h3-responsive text-center font-weight-bold dark-grey-text">{{list_don.categ}}</h4>
+    <hr>
+    <div class="row">
+      <!--Avatar-->
+      <div class="col-12 col-md-2 mb-md-0 mb-4 view overlay zoom">
+        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(32).jpg" class="img-fluid ">
+      </div>
+      <!--Author Data-->
+      <div class="col-12 col-md-10" >
+
+        <h5 class="font-weight-bold dark-grey-text mb-3">
+          <strong>{{list_don.prenom}} {{list_don.nom}}</strong>
+        </h5>
+
+        <div class="personal-sm pb-3">
+          <a class="fb-ic pr-2"><i class="fab fa-facebook-f mr-2"> </i></a>
+          <a class="tw-ic pr-2"><i class="fab fa-twitter mr-2"> </i></a>
+          <a class="gplus-ic pr-2"><i class="fab fa-google-plus-g mr-2"> </i></a>
+          <a class="li-ic pr-2"><i class="fab fa-linkedin-in mr-2"> </i></a>
+        </div>
+
+        <p>{{list_don.description}}</p>
+        <hr>
+        <p>{{list_don.numero}}</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!--/.Author box-->
+

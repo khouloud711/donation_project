@@ -29,6 +29,10 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/Categories']);
   }
 
+  sendMeContact(){
+    this.router.navigate(['/Contact']);
+  }
+
   sendMeList_livres(){
     this.router.navigate(['/list_livres']);
   }

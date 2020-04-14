@@ -1,73 +1,261 @@
-<section class="sec1">
-  <div class="content">
-    <h1>
-      "Le meilleur des dons est celui qui se fait sans demande"
-    </h1>
-  </div>
-</section>
 
-
-<section class="cat">
-    <div class="container">
-      <div class="card">
-        <div class="face face1">
-          <div class="content">
-            <img src="/assets/images/books.png" alt="">
-            <h3>Don des livres</h3>
+<!--Main Layout-->
+<main>
+<!--citation section-->
+<div class="container">
+  <section class="section pb-3 wow fadeIn" data-wow-delay="0.3s">
+      <h1 class="font-weight-bold text-center h1 my-5">Citations</h1>
+      <div class="heading-underline"></div>
+      <br>
+    <div class="jumbotron">
+     <div class="row">
+      <div class="col-md-6 clients">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="/assets/images/client1.png" alt="">
           </div>
-        </div>
-        <div class="face face2">
-            <div class="content">
-              <p>N'hésitez pas d'aider les gens qui n'ont pas le budget nécessaire pour fournir des livres à leurs enfants</p>
-              <a type="button" (click)="sendMeDonneLivre()">Donner maintenant</a>
+          <div class="col-md-8">
+            <blockquote>
+              <i class="fas fa-quote-left"></i>
+              A tout être humain ont été concédées deux qualités : le pouvoir et le don. Le pouvoir conduit l'homme à la rencontre de son destin ;
+              le don l'oblige à partager avec les autres ce qu'il y a de meilleur en lui.
+              <hr class="clients-hr">
+              <cite>&#8212; Paulo Coelho </cite>
+            </blockquote>
+          </div>
+        </div></div>
+        <div class="col-md-6 clients">
+        <div class="row">
+            <div class="col-md-4">
+              <img src="/assets/images/cit2.png" alt="">
             </div>
-        </div>
+            <div class="col-md-8">
+              <blockquote>
+                <i class="fas fa-quote-left"></i>
+                On n'est jamais heureux que dans le bonheur qu'on donne. Donner, c'est recevoir.
+                <hr class="clients-hr">
+                <cite>&#8212; Abbé Pierre </cite>
+              </blockquote>
+            </div>
+          </div>
       </div>
+
+    </div><!--end row-->
+  </div><!--end jumbotron-->
+
+
+  </section>
+</div>
+
+<hr class="w-100 clearfix d-md-none">
+
+<!-- Start about Area -->
+	<section class="about-area" id="about">
+		<div class="container-fluid">
+			<div class="row d-flex justify-content-end align-items-center">
+				<div class="col-lg-6 col-md-12 about-left no-padding">
+						<img class="img-fluid" src="/assets/images/about-img.jpg" alt="">
+				</div>
+        <div class="col-lg-6 col-md-12 about-right">
+          <h1>Bienvenu dans notre site</h1>
+          <p>
+            Notre objectif est de donner et d'aider les gens, ce geste altruiste vous permettra d'un côté de vous débarrasser
+            d'objets dont vous n'avez plus l'utilité, d'un autre de récupérer des objets encore utilisables afin de leur offrir une seconde vie.
+            <br>Même les associations peuvent intervenir. <br> N'hésitez plus!
+          </p>
+          <button class="btn primary-btn mt-20 text-uppercase ">Donner<span class="lnr lnr-arrow-right"></span></button>
+        </div>
+			</div>
+		</div>
+	</section>
+<!-- End about Area -->
+
+<hr class="w-100 clearfix d-md-none">
+
+<!--categ secttion-->
+
+<div class="container">
+  <section class="section pb-3 wow fadeIn" data-wow-delay="0.3s">
+      <h1 class="font-weight-bold text-center h1 my-5">Raisons d'aider</h1>
+      <div class="heading-underline"></div>
+      <br>
+      <div class="jumbotron">
+    <!-- Card deck -->
+    <div class="card-deck">
+
+      <!-- Card -->
+      <div class="card mb-4">
+
+        <!--Card image-->
+        <div class="view overlay">
+          <img class="card-img-top" src="assets/images/p2.jpg"
+            alt="Card image cap">
+
+            <div class="mask rgba-white-slight"></div>
+
+        </div>
+
+        <!--Card content-->
+        <div class="card-body">
+
+          <!--Title-->
+          <h4 class="card-title">Besoin de vêtements</h4>
+          <!--Text-->
+          <p class="card-text">...</p>
+            <br>
+            <br>
+
+        </div>
+
+      </div>
+      <!-- Card -->
+
+      <!-- Card -->
+      <div class="card mb-4">
+
+        <!--Card image-->
+        <div class="view overlay">
+          <img class="card-img-top" src="assets/images/p33.png"
+            alt="Card image cap" >
+
+            <div class="mask rgba-white-slight"></div>
+        </div>
+
+        <!--Card content-->
+        <div class="card-body">
+
+          <!--Title-->
+          <h4 class="card-title">Besoin de nourriture</h4>
+          <!--Text-->
+          <p class="card-text">...</p>
+            <br>
+            <br>
+        </div>
+
+      </div>
+      <!-- Card -->
+
+      <!-- Card -->
+      <div class="card mb-4">
+
+        <!--Card image-->
+        <div class="view overlay">
+          <img class="card-img-top" src="assets/images/p1.jpg"
+            alt="Card image cap" >
+
+            <div class="mask rgba-white-slight"></div>
+
+        </div>
+
+        <!--Card content-->
+        <div class="card-body">
+
+          <!--Title-->
+          <h4 class="card-title">Besoin de matériels</h4>
+          <!--Text-->
+          <p class="card-text">...</p>
+            <br>
+            <br>
+
+        </div>
+
+      </div>
+      <!-- Card -->
+
     </div>
+    <!-- Card deck -->
+<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+<button type="button" routerLink="/Categories" class="btn btn-light-blue btn-md text-center">Consulter la catégorie</button>
 
-    <div class="container">
-        <div class="card">
-          <div class="face face1">
-            <div class="content">
-              <img src="/assets/images/bed.png" alt="">
-              <h3>Don des meubles</h3>
-            </div>
-          </div>
-          <div class="face face2">
-              <div class="content">
-                <p>
-                  De nombreuses raisons peuvent vous pousser à vous séparer de certains de vos meubles le cas d’un lit de bébé,
-                  il y a d'autres qui en besoin n'hésitez pas de les aider!
-                </p>
-                <a type="button" (click)="sendMeDonneMeuble()">Donner maintenant</a>
-              </div>
-          </div>
-        </div>
-      </div>
+  </div>
+  </section>
+</div>
 
-      <div class="container">
-          <div class="card">
-            <div class="face face1">
-              <div class="content">
-                <img src="/assets/images/clothes.png" alt="">
-                <h3>Don des vêtements</h3>
-              </div>
-            </div>
-            <div class="face face2">
-                <div class="content">
-                  <p>
-                    Chaussures ou vêtements trop petits, démodés, assez vus ? Vous ne les portez plus ? Ne les laissez pas s’entasser dans vos armoires et surtout ne les jetez pas à la poubelle !
-                    Ils peuvent être la joie des autres!
-                  </p>
-                  <a type="button" (click)="sendMeDonneVetement()">Donner maintenant</a>
-                </div>
-            </div>
-          </div>
-        </div>
 
-        <a  class="but"type="button" (click)="sendMeCategories()">Voir d'autres</a>
+   <!-- Streak Section -->
+   <div class="streak streak-md streak-photo" style="background-image:url('/assets/images/assoc.png')">
+    <div class="flex-center white-text rgba-black-light pattern-1">
+      <ul class="mb-0 list-unstyled">
+        <li>
+          <h2 class="h2-responsive">Vous pouvez consulter la liste des dons</h2>
+        </li>
+        <button type="button" routerLink="/listeDons" class="btn btn-light-blue btn-md text-center">Voir tous les dons</button>
+      </ul>
 
-</section>
+    </div>
+  </div>
+
+  <!-- /.Streak Section -->
+
+
+
+
+</main>
+<!--Main Layout-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

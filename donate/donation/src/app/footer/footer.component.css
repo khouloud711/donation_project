@@ -1,8 +1,43 @@
-.footer {
-  text-align: center;
-  margin: auto;
-  color: white;
+footer.page-footer {
+  background-color: #40474e !important;
 }
-span :hover{
-  font-size: bold;
+
+h5{
+  font-weight: 700 !important;
+  font-size: .9rem !important;
+  letter-spacing: .1rem !important;
 }
+
+/*--- start footer section---
+
+footer{
+  background-color: #40474e !important;
+  color: white !important;
+  padding: 2rem 0 2rem !important;
+  margin-top: 1rem !important;
+}
+footer img{
+  height:3rem;
+  margin: 1.5rem 0;
+}
+footer a {
+  color: white !important;
+}
+footer svg.svg-inline--fa{
+  font-size:1.6rem !important;
+  margin: 1.2rem .5rem 0 0 !important;
+}
+footer svg.svg-inline--fa:hover{
+  color: #1ebba3 !important;
+}
+hr.socket{
+  width: 100% !important;
+  border-top: .2rem solid #666b71 !important;
+  margin-top: 3rem !important;
+}
+
+
+.mdb-color .lighten-2 {
+  background-color: #40474e !important;
+}
+*/

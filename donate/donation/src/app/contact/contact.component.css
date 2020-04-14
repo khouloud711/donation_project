@@ -1,0 +1,42 @@
+/*start icon css*/
+.fas{
+  color: #1ebba3 !important;
+}
+
+
+/*start button css*/
+.btn{
+  border-width: medium !important;
+  border-radius: 0 !important;
+  text-transform: uppercase !important;
+  font-size: 1.2rem !important;
+  padding: .6rem 1.2rem !important;
+  color: white !important;
+  background-color: #1ebba3 !important;
+  border-color: #1ebba3 !important;
+}
+.btn:hover{
+  background-color: #189582 !important;
+  border-color: #189582 !important;
+}
+
+/*start contact form css*/
+
+form label{
+
+  color: #757575 !important;
+
+}
+
+ form input:focus ~ label,
+ form textarea:focus ~ label{
+
+  color: #1ebba3 !important;
+
+}
+
+input[type=text]:focus:not([readonly]),
+textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #757575 !important;
+  box-shadow: 0 1px 0 0 #757575 !important;
+}

@@ -1,11 +1,52 @@
+<br>
 <section >
-<h1>Veuillez consulter d'abord la catégorie</h1>
-<a class="but"type="button" (click)="sendMeCategories()">Consulter</a>
+    <div class="jumbotron">
+  <div class="box">
+    <h2>Donner</h2>
+    <form (submit)="addList_dons()">
+          <select name="type" class="app-select form-control" [(ngModel)]="categ"   required>
+              <option disabled selected>Choisir un type de don</option>
+              <option value="1">Don de livres</option>
+              <option value="2">Don de vetements</option>
+              <option value="3">Don de meubles</option>
+              <option value="3">Don de nourriture</option>
+              <option value="3">Don de matériels</option>
+              <option value="3">autres types de don</option>
+            </select>
+
+      <div class="inputBox">
+          <input type="text" class="" name="nom" [(ngModel)]="nom"  required>
+          <label for="" class="">Nom</label>
+
+      </div>
+      <div class="inputBox">
+
+          <input type="text" class="" name="prenom" [(ngModel)]="prenom" required>
+          <label for="" class="">Prénom</label>
+
+      </div>
+      <div class="inputBox">
+              <input type="number" class="" name="numero" [(ngModel)]="numero" required>
+              <label for="" class="">Numéro de téléphone </label>
+
+            </div>
+            <div class="inputBox">
+              <textarea class="" name="description" [(ngModel)]="description" required></textarea>
+              <label class="">Description</label>
+
+          </div>
+
+          <label  class="labelfile"for="file">Mettre l'image de ce que tu vas donner: </label>
+
+          <input type="file" name="file" id="file" class="inputfile"   />
+
+
+
+      <input class="btn" type="submit" value="Confirmer" >
+    </form>
+  </div>
+  </div>
 </section>
-
-
-
-
 
 
 

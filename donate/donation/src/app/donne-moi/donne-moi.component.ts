@@ -1,18 +1,45 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Listdons } from '../list-dons';
+import { ListDonsService } from '../list-dons.service';
 
 @Component({
   selector: 'app-donne-moi',
   templateUrl: './donne-moi.component.html',
-  styleUrls: ['./donne-moi.component.css']
+  styleUrls: ['./donne-moi.component.css'],
+  providers:[ListDonsService]
 })
 export class DonneMoiComponent implements OnInit {
+  Listdons: Listdons[];
+  list_don: Listdons;
 
-  constructor( private router: Router) { }
+  categ:string;
+  nom: string;
+  prenom: string;
+  numero:number;
+  description: string;
+  /*img:ImageData*/
 
-  ngOnInit(): void {
+  constructor( private router: Router,private ListLivresService: ListDonsService) { }
+
+  ngOnInit() {
+    this.ListLivresService.getList_dons()
+    .subscribe(Listdons =>
+    this.Listdons = Listdons);
   }
-  sendMeCategories(){
-    this.router.navigate(['/Categories']);
+
+  addList_dons(){
+    const newlist_dons={
+      categ:this.categ,
+      nom:this.nom,
+      prenom:this.prenom,
+      numero:this.numero,
+      description:this.description
+    }
+    this.ListLivresService.addList_dons(newlist_dons)
+      .subscribe(list_don => {
+        this.Listdons.push(list_don);
+      });
   }
+
 }
