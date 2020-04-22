@@ -267,11 +267,20 @@ blockquote .svg-inline--fa {
 
 
 /*streak img*/
+.streak {
+  background: fixed;
+  height: 200px;
+}
 
 .streak.streak-photo {
 
   background-repeat: no-repeat;
   }
+.streak h2{
+  letter-spacing: .1rem;
+  font-size: 40px;
+  font-weight: 700;
+}
 
 
 /*about section*/
@@ -300,13 +309,49 @@ blockquote .svg-inline--fa {
   letter-spacing: .1rem;
   font-size: 40px;
   font-weight: 700;
-
 }
 .btn{
   margin-left: 15px;
 }
 
 
+/*assoc css*/
+.map_im{
+  width: 50%;
+  float: center;
+  margin: auto;
+  top: 0;
+  left: 0;
 
+}
+.map_im path{
+  fill: #add2a4;
+  stroke: #FFF;
+  stroke-width: 1px;
+  transition: fill 0.3s;
+}
+.map_im path:hover{
+  fill: #074b16;
 
-
+}
+[id*='TN-']{
+  cursor: pointer;
+}
+.assoc-right p {
+  display: block !important;
+  margin-block-start: 1em !important;
+  margin-block-end: 1em !important;
+  margin-inline-start: 0px !important;
+  margin-inline-end: 0px !important;
+  font-size: 20px !important;
+  padding: 15px !important;
+  color: #777;
+}
+.assoc-right h2{
+  color:black !important;
+  margin-bottom:25px !important;
+  padding: 15px;
+  letter-spacing: .1rem;
+  font-size: 40px;
+  font-weight: 700;
+}

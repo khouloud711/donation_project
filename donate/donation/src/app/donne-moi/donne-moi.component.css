@@ -132,3 +132,8 @@ section{
   border-color: #189582 !important;
 }
 /*end form css*/
+.jumbotron{
+  margin: auto;
+  width: 1000px;
+  margin-top: 50px;
+}
