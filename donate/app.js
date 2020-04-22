@@ -1,4 +1,4 @@
-var PORT = process.env.PORT || 5000;
+
 
 //importing modules
 var express = require('express');
@@ -36,7 +36,7 @@ mongoose.connection.on('error',(err)=>{
 });
 
 //port
-const port = 3000;
+const port = process.env.port || 3000;
 
 //add middlware -cors
 app.use(cors());
