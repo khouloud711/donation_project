@@ -1,3 +1,5 @@
+var PORT = process.env.PORT || 5000;
+
 //importing modules
 var express = require('express');
 var mongoose = require('mongoose');
