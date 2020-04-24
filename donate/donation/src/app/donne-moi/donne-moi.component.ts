@@ -20,10 +20,10 @@ export class DonneMoiComponent implements OnInit {
   description: string;
   /*img:ImageData*/
 
-  constructor( private router: Router,private ListLivresService: ListDonsService) { }
+  constructor( private router: Router,private ListDonsService: ListDonsService) { }
 
   ngOnInit() {
-    this.ListLivresService.getList_dons()
+    this.ListDonsService.getList_dons()
     .subscribe(Listdons =>
     this.Listdons = Listdons);
   }
@@ -36,7 +36,7 @@ export class DonneMoiComponent implements OnInit {
       numero:this.numero,
       description:this.description
     }
-    this.ListLivresService.addList_dons(newlist_dons)
+    this.ListDonsService.addList_dons(newlist_dons)
       .subscribe(list_don => {
         this.Listdons.push(list_don);
       });

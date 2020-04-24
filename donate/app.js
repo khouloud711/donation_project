@@ -1,5 +1,3 @@
-
-
 //importing modules
 var express = require('express');
 var mongoose = require('mongoose');
@@ -12,7 +10,7 @@ var app = express();
 const route = require('./routes/route');
 
 //connect to mongoDB
-mongoose.connect('mongodb://localhost:27017/stockPharmacie');
+mongoose.connect('mongodb://localhost:27017/');
 
 /*const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://khouloud:khouloud12@don-cluster-9nilh.mongodb.net/donBD?retryWrites=true&w=majority";
@@ -36,7 +34,7 @@ mongoose.connection.on('error',(err)=>{
 });
 
 //port
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 
 //add middlware -cors
 app.use(cors());

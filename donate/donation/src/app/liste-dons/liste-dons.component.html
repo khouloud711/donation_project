@@ -1,7 +1,7 @@
 <!--Author box-->
-<section>
+<section *ngFor="let list_don of Listdons">
 
-  <div class="jumbotron p-5 text-center text-md-left author-box wow fadeIn" data-wow-delay="0.3s" *ngFor="let list_don of Listdons">
+  <div class="jumbotron p-5 text-center text-md-left author-box wow fadeIn" data-wow-delay="0.3s" >
     <!--Name-->
     <h4 class="h3-responsive text-center font-weight-bold dark-grey-text">{{list_don.categ}}</h4>
     <hr>
@@ -27,10 +27,12 @@
         <p>{{list_don.description}}</p>
         <hr>
         <p>{{list_don.numero}}</p>
+
       </div>
     </div>
-  </div>
 
+  </div>
+<br>
+<br>
 </section>
 <!--/.Author box-->
-
