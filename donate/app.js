@@ -10,16 +10,16 @@ var app = express();
 const route = require('./routes/route');
 
 //connect to mongoDB
-mongoose.connect('mongodb://localhost:27017/');
+//mongoose.connect('mongodb://localhost:27017/');
 
-/*const MongoClient = require('mongodb').MongoClient;
+const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://khouloud:khouloud12@don-cluster-9nilh.mongodb.net/donBD?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
   const collection = client.db("donBD").collection("liste");
   // perform actions on the collection object
   client.close();
-});*/
+});
 
 //on connection
 mongoose.connection.on('connected',()=>{
