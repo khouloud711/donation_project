@@ -6,10 +6,12 @@ import { ListDonsService } from '../list-dons.service';
 @Component({
   selector: 'app-liste-dons',
   templateUrl: './liste-dons.component.html',
-  styleUrls: ['./liste-dons.component.css']
+  styleUrls: ['./liste-dons.component.css'],
+  providers:[ListDonsService]
 })
 export class ListeDonsComponent implements OnInit {
   Listdons: Listdons[];
+
 
   constructor(private router: Router,private route: ActivatedRoute,private ListDonsService: ListDonsService) { }
 

@@ -23,9 +23,7 @@ export class DonneMoiComponent implements OnInit {
   constructor( private router: Router,private ListDonsService: ListDonsService) { }
 
   ngOnInit() {
-    this.ListDonsService.getList_dons()
-    .subscribe(Listdons =>
-    this.Listdons = Listdons);
+
   }
 
   addList_dons(){
@@ -37,9 +35,12 @@ export class DonneMoiComponent implements OnInit {
       description:this.description
     }
     this.ListDonsService.addList_dons(newlist_dons)
-      .subscribe(list_don => {
+      .subscribe(list_don=> {
         this.Listdons.push(list_don);
       });
+
+    this.router.navigate(['/listeDons']);
+
   }
 
 }
