@@ -1,0 +1,40 @@
+.card{
+  width:500px !important;
+  margin: auto !important;
+  margin-top: 50px !important;
+  margin-bottom: 50px !important;
+}
+
+.card-header{
+  background: #1ebba3 !important;
+}
+form label{
+
+  color: #757575 !important;
+
+}
+
+ form input:focus ~ label{
+
+  color: #1ebba3 !important;
+
+}
+
+input:focus:not([readonly]) {
+  border-bottom: 1px solid #757575 !important;
+  box-shadow: 0 1px 0 0 #757575 !important;
+}
+
+.btn-outline-info{
+  color: #1ebba3  !important;
+  border: 2px solid #1ebba3  !important;
+}
+.btn-outline-info:focus:not([readonly]) {
+  color: #1ebba3  !important;
+  border: 2px solid #1ebba3  !important;
+}
+
+.forget,.registre{
+color:#127969 !important;
+}
+

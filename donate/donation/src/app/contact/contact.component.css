@@ -21,7 +21,11 @@
 }
 
 /*start contact form css*/
+.contact{
+  margin: auto;
+  width: 800px !important;
 
+}
 form label{
 
   color: #757575 !important;

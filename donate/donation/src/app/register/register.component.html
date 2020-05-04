@@ -1,0 +1,95 @@
+<br>
+<br>
+<div class="container">
+  <div class="jumbotron">
+ <!-- Material form register -->
+ <div class="card"  id="registre">
+
+  <h5 class="card-header info-color white-text text-center py-4">
+      <strong>Créer un compte</strong>
+  </h5>
+
+  <!--Card content-->
+  <div class="card-body px-lg-5 pt-0">
+
+      <!-- Form -->
+      <form class="text-center" style="color: #757575;" (submit)="registerUser()">
+
+          <div class="form-row">
+              <div class="col">
+                  <!-- First name -->
+                  <div class="md-form">
+                      <input type="text" name="firstname" [(ngModel)] ="registerUserData.firstname" id="materialRegisterFormFirstName" class="form-control">
+                      <label for="materialRegisterFormFirstName">Prénom</label>
+                  </div>
+              </div>
+              <div class="col">
+                  <!-- Last name -->
+                  <div class="md-form">
+                      <input type="email" name="lastname" [(ngModel)] ="registerUserData.lastname" id="materialRegisterFormLastName" class="form-control">
+                      <label for="materialRegisterFormLastName">Nom</label>
+                  </div>
+              </div>
+          </div>
+
+          <!-- E-mail -->
+          <div class="md-form mt-0">
+              <input type="email" name="email" [(ngModel)] ="registerUserData.email" id="materialRegisterFormEmail" class="form-control">
+              <label for="materialRegisterFormEmail">E-mail</label>
+          </div>
+
+          <!-- Password -->
+          <div class="md-form">
+              <input type="password" name="password" [(ngModel)] ="registerUserData.password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
+              <label for="materialRegisterFormPassword">Mot de passe</label>
+              <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                  Au moins 8 caractères
+              </small>
+          </div>
+
+          <!-- Phone number -->
+          <div class="md-form">
+              <input type="number" name="number" [(ngModel)] ="registerUserData.number" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
+              <label for="materialRegisterFormPhone">Numéro téléphone</label>
+
+          </div>
+
+          <!-- Newsletter -->
+          <div class="form-check">
+            <br>
+          </div>
+
+          <!-- Sign up button -->
+          <button  class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">S'inscrire</button>
+
+          <!-- Social register -->
+          <p>ou s'inscrire avec :</p>
+
+          <a type="button" class="btn-floating btn-fb btn-sm">
+              <i class="fab fa-facebook-f"></i>
+          </a>
+          <a type="button" class="btn-floating btn-tw btn-sm">
+              <i class="fab fa-twitter"></i>
+          </a>
+          <a type="button" class="btn-floating btn-li btn-sm">
+              <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a type="button" class="btn-floating btn-git btn-sm">
+              <i class="fab fa-github"></i>
+          </a>
+
+          <hr>
+
+          <!-- Terms of service -->
+          <p>Déjà inscrit ? <a class="term" routerLink="/login">Connectez-vous ici !</a>
+
+
+      </form>
+      <!-- Form -->
+
+  </div>
+
+</div>
+<!-- Material form register -->
+</div>
+</div>
