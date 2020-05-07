@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Listdons } from '../list-dons';
+import { Listdons } from '../../list-dons';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ListDonsService } from '../list-dons.service';
+import { ListDonsService } from '../../services/list-dons.service';
 
 @Component({
   selector: 'app-liste-dons',

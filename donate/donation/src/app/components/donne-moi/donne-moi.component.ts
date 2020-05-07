@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Listdons } from '../list-dons';
-import { ListDonsService } from '../list-dons.service';
+import { Listdons } from '../../list-dons';
+import { ListDonsService } from '../../services/list-dons.service';
 import { HttpErrorResponse} from '@angular/common/http';
 
 

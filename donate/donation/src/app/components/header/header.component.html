@@ -29,6 +29,18 @@
           <li class="nav-item">
             <a class="nav-link"  type="button" (click)="sendMeContact()">Contact</a>
           </li>
+          <li class="nav-item dropdown" *ngIf="_authService.loggedIn()">
+            <a class="nav-link dropdown-toggle waves-effect" href="#" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <span class="clearfix d-none d-sm-inline-block">Profile</span><i class="fas fa-user"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right " aria-labelledby="userDropdown">
+              <a class="dropdown-item waves-effect waves-light" routerLink="/profil">Voir le profile <i class="far fa-user-circle"></i></a>
+              <a  class="dropdown-item waves-effect waves-light"  (click)="_authService.logoutUser()" >
+                déconnexion <i class="fas fa-sign-out-alt"></i>
+            </a>
+            </div>
+          </li>
+
         </ul>
       </div>
     </div>

@@ -84,4 +84,8 @@ footer.page-footer {
   letter-spacing: .1rem;
 }
 
+.dropdown-menu .dropdown-item{
 
+  font-size: .9rem;
+  letter-spacing: .1rem;
+}

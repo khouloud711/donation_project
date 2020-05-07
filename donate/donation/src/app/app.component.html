@@ -1,8 +1,34 @@
+
 <app-header></app-header>
+
+
+<header *ngIf="_authService.loggedIn()">
+    <div class=" view jarallax" data-ride="carousel" data-jarallax='{"speed": 0.2}' style="background-image: url(/assets/images/home.png); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+      <div class="mask rgba-white-light">
+        <div class="container h-100 d-flex justify-content-center align-items-center">
+
+          <div class="row pt-5 mt-3">
+            <div class="col-md-12 mb-3"data-scrollax-parent="true">
+              <div class="intro-info-content text-center ">
+                <h1 class="display-3 mb-5 wow fadeInDown" data-wow-delay="0.3s">
+                  <a class="white-text font-weight-bold">votre don<br> est l'inspiration des autres</a>
+                </h1>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</header>
+
+
 <!--Main Navigation-->
-<header>
+<header *ngIf="!_authService.loggedIn()">
   <!--Carousel Wrapper-->
-  <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+  <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel" >
 
       <!--Indicators-->
       <ol class="carousel-indicators">

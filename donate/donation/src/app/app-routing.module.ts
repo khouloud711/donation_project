@@ -1,18 +1,18 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DonneMoiComponent } from './donne-moi/donne-moi.component';
-import { HomeComponent } from './home/home.component';
-import { AssociationsComponent } from './associations/associations.component';
-import { CategoriesComponent } from './categories/categories.component';
+import { DonneMoiComponent } from './components/donne-moi/donne-moi.component';
+import { HomeComponent } from './components/home/home.component';
+import { AssociationsComponent } from './components/associations/associations.component';
+import { CategoriesComponent } from './components/categories/categories.component';
 
-import { ContactComponent } from './contact/contact.component';
-import { ListeDonsComponent } from './liste-dons/liste-dons.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { ListeDonsComponent } from './components/liste-dons/liste-dons.component';
 
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { AuthGuard } from './auth.guard';
-import { UserProfilComponent } from './user-profil/user-profil.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { AuthGuard } from './guards/auth.guard';
+import { UserProfilComponent } from './components/user-profil/user-profil.component';
 
 
 
