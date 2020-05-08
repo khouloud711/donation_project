@@ -19,19 +19,15 @@ dotenv.config();
 
 //connect to mongoDB
 //hatyt link t3 bd toul ly yji f .env fi3oudh process.env.DB_CONNECT
-mongoose.connect(process.env.MONGODB_URI||'mongodb://localhost:27017/',{ useNewUrlParser: true , useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URI||'mongodb+srv://khouloud:khouloud12@don-cluster-9nilh.mongodb.net/donBD?retryWrites=true&w=majority',
+    { useNewUrlParser: true , useUnifiedTopology: true }, () =>{
+        console.log('connected to db')
+    });
 
-/*const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://khouloud:khouloud12@don-cluster-9nilh.mongodb.net/donBD?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-  const collection = client.db("donBD").collection("liste");
-  // perform actions on the collection object
-  client.close();
-});*/
 
-//on connection
-mongoose.connection.on('connected',()=>{
+
+//on connection: teb3a local
+/*mongoose.connection.on('connected',()=>{
     console.log('connected to database mongodb @ 27017')
 });
 
@@ -40,7 +36,7 @@ mongoose.connection.on('error',(err)=>{
         console.log('error in database connection'+ err);
     }
     
-});
+});*/
 
 //port
 const port = process.env.PORT || 3000;
