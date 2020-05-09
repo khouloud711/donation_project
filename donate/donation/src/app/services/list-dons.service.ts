@@ -17,13 +17,13 @@ export class ListDonsService {
   addList_dons(newlist_dons){
     var headers = new Headers();
     headers.append('Content-type','application/json');
-    return this.http.post('http://localhost:3000/api/donner',newlist_dons,{headers:headers})
+    return this.http.post('https://donation-app1.herokuapp.com/api/donner',newlist_dons,{headers:headers})
       .map(res => res.json());
   }
 
    //retreiving listdonService
    getList_dons(){
-    return this.http.get('http://localhost:3000/api/list_dons')
+    return this.http.get('https://donation-app1.herokuapp.com/api/list_dons')
       .map(res => res.json());
   }
 

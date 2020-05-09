@@ -1,3 +1,131 @@
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+
+section{
+  display: block;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+/********
+makhedmtch mtaa tooltip supprimer et modifier
+
+table .tooltip {
+  position: relative !important;
+  display: inline-block !important;
+}
+
+table tr td .tooltip .tooltiptext {
+  visibility: hidden !important;
+  width: 120px !important;
+  background-color: #555 !important;
+  color: #fff !important;
+  text-align: center !important;
+  border-radius: 6px !important;
+  padding: 5px 0 !important;
+  position: absolute !important;
+  z-index: 1 !important;
+  bottom: 125% !important;
+  left: 50% !important;
+  margin-left: -60px !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s !important;
+}
+
+table .tooltip .tooltiptext::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 50% !important;
+  margin-left: -5px !important;
+  border-width: 5px !important;
+  border-style: solid !important;
+  border-color: #555 transparent transparent transparent !important;
+}
+
+.table .tooltip:hover .tooltiptext {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+***********/
+.mb-1, .my-1 {
+  margin-bottom: 5.70rem!important;
+}
+.primary-color{
+  background-color: #555!important;
+}
+.classic-tabs .nav {
+  white-space: nowrap;
+  overflow-x: hidden;
+  position: relative;
+  -webkit-border-radius: .3rem .3rem 0 0;
+  border-radius: .3rem .3rem 0 0;
+}
+.classic-tabs .nav li:first-child {
+  margin-left: 56px;
+}
+.classic-tabs .nav.tabs-primary li a.active {
+  border-color: #fff;
+}
+.classic-tabs .nav li a:not(.active) {
+  margin-bottom: 3px;
+}
+.classic-tabs .nav li a.active {
+  border-bottom: 3px solid;
+  color: #fff;
+}
+.nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.classic-tabs .nav li a {
+  display: block;
+  padding: 20px 24px;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.7);
+  text-align: center;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+.nav-link:focus, .nav-link:hover {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+  color: #0056b3;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+.waves-effect {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+
+/*****/
+
 .profil-card{
   margin-top: 58px !important;
   margin-left: 800px !important;
@@ -83,4 +211,10 @@ div {
 ul.striped li {
   padding: .5rem;
   border-bottom: 1px solid rgba(0,0,0,.15);
+}
+
+
+/********/
+.post{
+  height: 290px !important;
 }

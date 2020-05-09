@@ -1,39 +1,217 @@
-  <div class="col-md-4 mb-md-0 mb-5">
+<div class="container-fluid">
 
-    <!-- Card -->
-    <div class="card profile-card">
 
-      <!-- Avatar -->
-      <div class="avatar z-depth-1-half mb-4">
-        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg" class="rounded-circle" alt="First sample avatar image">
-      </div>
+<section class="section team-section">
 
-      <div class="card-body pt-0 mt-0">
-        <!-- Name -->
-        <div class="text-center">
-          <h3 class="mb-3 font-weight-bold"><strong>Anna Deynah</strong></h3>
-          <h6 class="font-weight-bold blue-text mb-4">Web Designer</h6>
+  <!-- First row -->
+  <div class="row">
+
+    <!-- First column -->
+    <div class="col-md-8">
+
+      <div class="row mb-1">
+        <div class="col-md-9">
+          <h4 class="h4-responsive mt-1"></h4>
         </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 mb-1">
+          <!-- Tabs -->
+          <div class="classic-tabs">
+            <!-- Nav tabs -->
+            <div class="tabs-wrapper">
+              <ul class="nav tabs-primary primary-color" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link waves-light waves-effect waves-light active" data-toggle="tab" href="#panel83" role="tab" aria-selected="true">
+                    Vos données
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link waves-light waves-effect waves-light" data-toggle="tab" href="#panel84" role="tab" aria-selected="false">Vos dons</a>
+                </li>
+              </ul>
+            </div>
+            <!-- Tab panels -->
+            <div class="tab-content card">
+              <!-- Panel 1 -->
+              <div class="tab-pane fade active show" id="panel83" role="tabpanel">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                          <th scope="row">1</th>
+                          <th>Nom</th>
+                          <td>Bejaoui</td>
+                          <td></td>
+                          <td>
 
-        <ul class="striped list-unstyled">
-          <li><strong>E-mail address:</strong>{{loginUserData.email}}</li>
+                            <a class="teal-text" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i> </a>
+                            |
+                            <a class="red-text" data-toggle="tooltip" data-placement="top" title="" data-original-title="Remove"><i class="fas fa-times"></i> </a>
+                          </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">1</th>
+                        <th>Prénom</th>
+                        <td>Rayen</td>
+                        <td></td>
+                        <td>
 
-          <li><strong>Phone number:</strong> +1 234 5678 90</li>
+                          <a class="teal-text" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i> </a>
+                          |
+                          <a class="red-text" data-toggle="tooltip" data-placement="top" title="" data-original-title="Remove"><i class="fas fa-times"></i> </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <th>Adresse email</th>
+                        <td>rayouna@yahoo.com</td>
+                        <td></td>
+                        <td>
+                            <a class="teal-text " data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i> </a>
+                            |
+                            <a class="red-text " data-toggle="tooltip" data-placement="top" title="" data-original-title="Remove"><i class="fas fa-times"></i> </a>
 
-          <li><strong>Company:</strong> The Company, Inc</li>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <th>Numéro du téléphone</th>
+                        <td>+216 55235585</td>
+                        <td></td>
+                        <td>
 
-          <li><strong>Twitter username:</strong> @anna.doe</li>
+                          <a class="teal-text" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i> </a>
+                          |
+                          <a class="red-text" data-toggle="tooltip" data-placement="top" title="" data-original-title="Remove"><i class="fas fa-times"></i> </a>
+                        </td>
+                      </tr>
 
-          <li><strong>Instagram username:</strong> @anna.doe</li>
-        </ul>
 
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- /.Panel 1 -->
+              <!-- Panel 2 -->
+              <div class="tab-pane fade" id="panel84" role="tabpanel">
+                <div class="table-responsive" >
+
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>vos publications des dons</th>
+                        <th></th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let list_don of Listdons">
+                        <th scope="row"></th>
+                        <td >
+                            <div class="jumbotron p-5 text-center text-md-left author-box " data-wow-delay="0.3s" >
+                                <!--Name-->
+                                <h4 class="h3-responsive text-center font-weight-bold dark-grey-text">{{list_don.categ}}</h4>
+                                <hr>
+                                <div class="row">
+                                  <!--Avatar-->
+                                  <div class="col-12 col-md-2 mb-md-0 mb-4 view overlay zoom">
+                                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(32).jpg" class="img-fluid ">
+                                  </div>
+                                  <!--Author Data-->
+                                  <div class="col-12 col-md-10" >
+
+                                    <h5 class="font-weight-bold dark-grey-text mb-3">
+                                      <strong>{{list_don.prenom}} {{list_don.nom}}</strong>
+                                    </h5>
+
+                                    <div class="personal-sm pb-3">
+                                      <a class="fb-ic pr-2"><i class="fab fa-facebook-f mr-2"> </i></a>
+                                      <a class="tw-ic pr-2"><i class="fab fa-twitter mr-2"> </i></a>
+                                      <a class="gplus-ic pr-2"><i class="fab fa-google-plus-g mr-2"> </i></a>
+                                      <a class="li-ic pr-2"><i class="fab fa-linkedin-in mr-2"> </i></a>
+                                    </div>
+
+                                    <p>{{list_don.description}}</p>
+                                    <hr>
+                                    <p>Contacter : +216 {{list_don.numero}}</p>
+
+                                  </div>
+                                </div>
+
+                              </div>
+                        </td>
+                        <td></td>
+                        <td>
+
+                          <a class="teal-text" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"> </i></a> |
+                          <a class="red-text" data-toggle="tooltip" data-placement="top" title="" data-original-title="Remove"><i class="fas fa-times"></i> </a>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- /.Panel 2 -->
+            </div>
+            <!-- /.Tabs -->
+          </div>
+        </div>
       </div>
 
     </div>
-    <!-- Card -->
+    <!-- First column -->
+
+    <!-- Second column -->
+    <div class="col-md-4 mb-md-0 mb-5">
+
+      <!-- Card -->
+      <div class="card profile-card">
+
+        <!-- Avatar -->
+        <div class="avatar z-depth-1-half mb-4">
+          <img src="/assets/images/User.png" class="rounded-circle" alt="First sample avatar image">
+        </div>
+
+        <div class="card-body pt-0 mt-0">
+          <!-- Name -->
+          <div class="text-center">
+            <h3 class="mb-3 font-weight-bold"><strong>Rayen Bejaoui</strong></h3>
+            <h6 class="font-weight-bold green-text mb-4">Donateur</h6>
+          </div>
+
+          <ul class="striped list-unstyled">
+            <li><strong>Adresse e-mail:</strong> rayouna@yahoo.com</li>
+
+            <li><strong>Numéro de télephone:</strong> +216 55235585</li>
+
+            <li><strong></strong> </li>
+
+            <li><strong></strong> </li>
+          </ul>
+
+        </div>
+
+      </div>
+      <!-- Card -->
+
+    </div>
+    <!-- Second column -->
 
   </div>
+  <!-- First row -->
 
+</section>
 
-
-
+</div>
