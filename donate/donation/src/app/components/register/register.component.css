@@ -1,4 +1,4 @@
-.card{
+/*.card{
   width:500px !important;
   margin: auto !important;
   margin-top: 50px !important;
@@ -38,3 +38,335 @@ input:focus:not([readonly]) {
   color: #1ebba3  !important;
   border: 2px solid #1ebba3  !important;
 }
+
+*/
+
+
+
+
+
+body{
+  font-family: 'Poppins', sans-serif !important;
+  overflow: hidden !important;
+}
+
+.wave{
+position: fixed !important;
+bottom: 0 !important;
+left: 0 !important;
+height: 100% !important;
+z-index: -1 !important;
+}
+
+.container{
+  width: 100vw !important;
+  height: 100vh !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  grid-gap :7rem !important;
+  padding: 0 2rem !important;
+}
+
+.img{
+display: flex !important;
+justify-content: flex-end !important;
+align-items: center !important;
+}
+
+.login-content{
+display: flex !important;
+justify-content: flex-start !important;
+align-items: center !important;
+text-align: center !important;
+}
+
+.img img{
+width: 500px !important;
+}
+
+form{
+width: 360px !important;
+}
+
+.login-content img{
+  height: 100px !important;
+}
+
+.login-content h2{
+margin: 15px 0 !important;
+color: #333 !important;
+text-transform: uppercase !important;
+font-size: 2.9rem !important;
+}
+
+.login-content .input-div{
+position: relative !important;
+  display: grid !important;
+  grid-template-columns: 7% 93% !important;
+  margin: 25px 0 !important;
+  padding: 5px 0 !important;
+  border-bottom: 2px solid #d9d9d9 !important;
+}
+
+.login-content .input-div.one{
+margin-top: 0  !important;
+}
+
+.i{
+color: #d9d9d9 !important;
+display: flex !important;
+justify-content: center !important;
+align-items: center !important;
+}
+
+.i i{
+transition: .3s !important;
+}
+
+.input-div > div{
+  position: relative !important;
+height: 45px !important;
+}
+
+.input-div > div > h5{
+position: absolute !important;
+left: 10px !important;
+top: 50% !important;
+transform: translateY(-50%) !important;
+color: #999 !important;
+font-size: 18px !important;
+transition: .3s !important;
+}
+
+.input-div:before, .input-div:after{
+content: '' !important;
+position: absolute !important;
+bottom: -2px !important;
+width: 0% !important;
+height: 2px !important;
+background-color: #38d39f !important;
+transition: .4s !important;
+}
+
+.input-div:before{
+right: 50% !important;
+}
+
+.input-div:after{
+left: 50% !important;
+}
+
+.input-div.focus:before, .input-div.focus:after{
+width: 50% !important;
+}
+
+.input-div.focus > div > h5{
+top: -5px !important;
+font-size: 15px !important;
+}
+
+.input-div.focus > .i > i{
+color: #38d39f !important;
+}
+
+.input-div > div > input{
+position: absolute !important;
+left: 0 !important;
+top: 0 !important;
+width: 100% !important;
+height: 100% !important;
+border: none !important;
+outline: none !important;
+background: none !important;
+padding: 0.5rem 0.7rem !important;
+font-size: 1.2rem !important;
+color: #555 !important;
+font-family: 'poppins', sans-serif !important;
+}
+
+.input-div.pass{
+margin-bottom: 4px !important;
+}
+
+a{
+display: block !important;
+text-align: right !important;
+text-decoration: none !important;
+color: #999 !important;
+font-size: 0.9rem !important;
+transition: .3s !important;
+}
+
+a:hover{
+color: #38d39f !important;
+}
+
+.btn{
+display: block !important;
+width: 100% !important;
+height: 50px !important;
+border-radius: 25px !important;
+outline: none !important;
+border: none !important;
+background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f) !important;
+background-size: 200% !important;
+font-size: 1.2rem !important;
+color: #fff !important;
+font-family: 'Poppins', sans-serif !important;
+text-transform: uppercase !important;
+margin: 1rem 0 !important;
+cursor: pointer !important;
+transition: .5s !important;
+}
+.btn:hover{
+background-position: right !important;
+}
+
+
+@media screen and (max-width: 1050px){
+.container{
+  grid-gap: 5rem !important;
+}
+}
+
+@media screen and (max-width: 1000px){
+form{
+  width: 290px !important;
+}
+
+.login-content h2{
+      font-size: 2.4rem !important;
+      margin: 8px 0 !important;
+}
+
+.img img{
+  width: 400px !important;
+}
+}
+
+@media screen and (max-width: 900px){
+.container{
+  grid-template-columns: 1fr !important;
+}
+
+.img{
+  display: none !important;
+}
+
+.wave{
+  display: none !important;
+}
+
+.login-content{
+  justify-content: center !important;
+}
+}
+
+
+
+
+
+
+
+
+
+/*
+
+<br>
+<br>
+<div class="container">
+  <div class="jumbotron">
+ <!-- Material form register -->
+ <div class="card"  id="registre">
+
+  <h5 class="card-header info-color white-text text-center py-4">
+      <strong>Créer un compte</strong>
+  </h5>
+
+  <!--Card content-->
+  <div class="card-body px-lg-5 pt-0">
+
+      <!-- Form -->
+      <form class="text-center" style="color: #757575;" (submit)="registerUser()">
+
+          <div class="form-row">
+              <div class="col">
+                  <!-- First name -->
+                  <div class="md-form">
+                      <input type="text" name="firstname" [(ngModel)] ="registerUserData.firstname" id="materialRegisterFormFirstName" class="form-control">
+                      <label for="materialRegisterFormFirstName">Prénom</label>
+                  </div>
+              </div>
+              <div class="col">
+                  <!-- Last name -->
+                  <div class="md-form">
+                      <input type="email" name="lastname" [(ngModel)] ="registerUserData.lastname" id="materialRegisterFormLastName" class="form-control">
+                      <label for="materialRegisterFormLastName">Nom</label>
+                  </div>
+              </div>
+          </div>
+
+          <!-- E-mail -->
+          <div class="md-form mt-0">
+              <input type="email" name="email" [(ngModel)] ="registerUserData.email" id="materialRegisterFormEmail" class="form-control">
+              <label for="materialRegisterFormEmail">E-mail</label>
+          </div>
+
+          <!-- Password -->
+          <div class="md-form">
+              <input type="password" name="password" [(ngModel)] ="registerUserData.password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
+              <label for="materialRegisterFormPassword">Mot de passe</label>
+              <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                  Au moins 8 caractères
+              </small>
+          </div>
+
+          <!-- Phone number -->
+          <div class="md-form">
+              <input type="number" name="number" [(ngModel)] ="registerUserData.number" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
+              <label for="materialRegisterFormPhone">Numéro téléphone</label>
+
+          </div>
+
+          <!-- Newsletter -->
+          <div class="form-check">
+            <br>
+          </div>
+
+          <!-- Sign up button -->
+          <button  class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">S'inscrire</button>
+
+          <!-- Social register -->
+          <p>ou s'inscrire avec :</p>
+
+          <a type="button" class="btn-floating btn-fb btn-sm">
+              <i class="fab fa-facebook-f"></i>
+          </a>
+          <a type="button" class="btn-floating btn-tw btn-sm">
+              <i class="fab fa-twitter"></i>
+          </a>
+          <a type="button" class="btn-floating btn-li btn-sm">
+              <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a type="button" class="btn-floating btn-git btn-sm">
+              <i class="fab fa-github"></i>
+          </a>
+
+          <hr>
+
+          <!-- Terms of service -->
+          <p>Déjà inscrit ? <a class="term" routerLink="/login">Connectez-vous ici !</a>
+
+
+      </form>
+      <!-- Form -->
+
+  </div>
+
+</div>
+<!-- Material form register -->
+</div>
+</div>
+
+
+*/

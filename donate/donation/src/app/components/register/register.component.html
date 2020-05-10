@@ -1,95 +1,64 @@
-<br>
-<br>
+<img class="wave" src="/assets/images/wave.png">
 <div class="container">
-  <div class="jumbotron">
- <!-- Material form register -->
- <div class="card"  id="registre">
-
-  <h5 class="card-header info-color white-text text-center py-4">
-      <strong>Créer un compte</strong>
-  </h5>
-
-  <!--Card content-->
-  <div class="card-body px-lg-5 pt-0">
-
-      <!-- Form -->
-      <form class="text-center" style="color: #757575;" (submit)="registerUser()">
-
-          <div class="form-row">
-              <div class="col">
-                  <!-- First name -->
-                  <div class="md-form">
-                      <input type="text" name="firstname" [(ngModel)] ="registerUserData.firstname" id="materialRegisterFormFirstName" class="form-control">
-                      <label for="materialRegisterFormFirstName">Prénom</label>
-                  </div>
-              </div>
-              <div class="col">
-                  <!-- Last name -->
-                  <div class="md-form">
-                      <input type="email" name="lastname" [(ngModel)] ="registerUserData.lastname" id="materialRegisterFormLastName" class="form-control">
-                      <label for="materialRegisterFormLastName">Nom</label>
-                  </div>
-              </div>
-          </div>
-
-          <!-- E-mail -->
-          <div class="md-form mt-0">
-              <input type="email" name="email" [(ngModel)] ="registerUserData.email" id="materialRegisterFormEmail" class="form-control">
-              <label for="materialRegisterFormEmail">E-mail</label>
-          </div>
-
-          <!-- Password -->
-          <div class="md-form">
-              <input type="password" name="password" [(ngModel)] ="registerUserData.password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
-              <label for="materialRegisterFormPassword">Mot de passe</label>
-              <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                  Au moins 8 caractères
-              </small>
-          </div>
-
-          <!-- Phone number -->
-          <div class="md-form">
-              <input type="number" name="number" [(ngModel)] ="registerUserData.number" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
-              <label for="materialRegisterFormPhone">Numéro téléphone</label>
-
-          </div>
-
-          <!-- Newsletter -->
-          <div class="form-check">
-            <br>
-          </div>
-
-          <!-- Sign up button -->
-          <button  class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">S'inscrire</button>
-
-          <!-- Social register -->
-          <p>ou s'inscrire avec :</p>
-
-          <a type="button" class="btn-floating btn-fb btn-sm">
-              <i class="fab fa-facebook-f"></i>
-          </a>
-          <a type="button" class="btn-floating btn-tw btn-sm">
-              <i class="fab fa-twitter"></i>
-          </a>
-          <a type="button" class="btn-floating btn-li btn-sm">
-              <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a type="button" class="btn-floating btn-git btn-sm">
-              <i class="fab fa-github"></i>
-          </a>
-
-          <hr>
-
-          <!-- Terms of service -->
-          <p>Déjà inscrit ? <a class="term" routerLink="/login">Connectez-vous ici !</a>
-
-
-      </form>
-      <!-- Form -->
-
+  <div class="img">
+    <img src="/assets/images/bg.svg">
   </div>
+  <div class="login-content">
+    <form action="index.html">
 
-</div>
-<!-- Material form register -->
-</div>
-</div>
+             <div class="input-div pass">
+                <div class="i">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="div">
+                  <h5>Prénom</h5>
+                  <input type="text" name="firstname" [(ngModel)] ="registerUserData.firstname" class="input">
+              </div>
+             </div>
+             <div class="input-div pass">
+                <div class="i">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="div">
+                  <h5>Nom</h5>
+                  <input type="text" name="lastname" [(ngModel)] ="registerUserData.lastname"class="input">
+              </div>
+             </div>
+             <div class="input-div one">
+                <div class="i">
+                    <i class="far fa-envelope"></i>
+                </div>
+                <div class="div">
+                    <h5>E-mail</h5>
+                    <input type="email"  name="email" [(ngModel)] ="registerUserData.email"  class="input">
+                </div>
+             </div>
+             <div class="input-div pass">
+                <div class="i">
+                   <i class="fas fa-lock"></i>
+                </div>
+                <div class="div">
+                   <h5>Mot de passe</h5>
+                   <input type="password" name="password" [(ngModel)] ="registerUserData.password"  class="input">
+               </div>
+
+            </div>
+            <div class="input-div pass">
+                <div class="i">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="div">
+                   <h5>Numéro téléphone</h5>
+                   <input type="number" name="number" [(ngModel)] ="registerUserData.number"  class="input">
+               </div>
+            </div>
+
+
+            <input type="submit" (click)="registerUser()" class="btn" value="S'inscrire">
+            <br>
+            <p>Déjà inscrit ?
+                <a   routerLink="/login">Connectez-vous ici !</a>
+            </p>
+          </form>
+      </div>
+  </div>

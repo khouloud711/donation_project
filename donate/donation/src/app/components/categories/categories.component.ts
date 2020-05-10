@@ -13,27 +13,6 @@ export class CategoriesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  sendMeDonneLivre(){
-    this.router.navigate(['Don-livres']);
-  }
-  sendMeDonneMeuble(){
-    this.router.navigate(['Don-meubles']);
-  }
 
-  sendMeDonneVetement(){
-    this.router.navigate(['Don-vetements']);
-  }
-
-  sendMeDonneProduit(){
-    this.router.navigate(['Don-produits']);
-  }
-
-  sendMeDonneMateriel(){
-    this.router.navigate(['Don-materiels']);
-  }
-
-  sendMeDonneAutre(){
-    this.router.navigate(['Don-autres']);
-  }
 
 }

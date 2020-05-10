@@ -1,6 +1,6 @@
 $(function(){
 
-  $('[id*=TN-').on('click',function(){
+ $('[id*=TN-').on('click',function(){
     let regionId = $(this)["0"].id;
     regionId=regionId.replace('TN-','');
 
@@ -32,7 +32,5 @@ $(function(){
 
 
 })
-
-
 
 

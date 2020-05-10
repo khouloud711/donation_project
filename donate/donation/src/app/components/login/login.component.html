@@ -1,69 +1,39 @@
-<br>
-<br>
+<img class="wave" src="/assets/images/wave.png">
 <div class="container">
-  <div class="jumbotron">
-<!-- Material form login -->
-<div class="card">
+  <div class="img">
+    <img src="/assets/images/bg.svg">
+  </div>
+  <div class="login-content">
+    <form action="index.html">
+      <img src="/assets/images/avatar.svg">
+      <h2 class="title">Bienvenu</h2>
+             <div class="input-div one">
+                <div class="i">
+                    <i class="fas fa-at"></i>
+                </div>
+                <div class="div">
+                    <h5>E-mail</h5>
+                    <input type="email" name="email" [(ngModel)] ="loginUserData.email" class="input">
+                </div>
+             </div>
+             <div class="input-div pass">
+                <div class="i">
+                   <i class="fas fa-lock"></i>
+                </div>
+                <div class="div">
+                   <h5>Mot de passe</h5>
+                   <input type="password" name="password" [(ngModel)] ="loginUserData.password" class="input">
+               </div>
+            </div>
+            <a href="#">Mot de passe oublié ?</a>
 
-  <h5 class="card-header info-color white-text text-center py-4">
-    <strong>Se connecter</strong>
-  </h5>
-
-  <!--Card content-->
-  <div class="card-body px-lg-5 pt-0">
-
-    <!-- Form -->
-    <form class="text-center" style="color: #757575;" action="#!">
-
-      <!-- Email -->
-      <div class="md-form">
-        <input type="email" name="email" [(ngModel)] ="loginUserData.email" id="materialLoginFormEmail" class="form-control">
-        <label for="materialLoginFormEmail">E-mail</label>
+            <input type="submit" (click)="loginUser()" class="btn" value="Login">
+            <br>
+            <p>Pas encore de compte ?
+                <a   routerLink="/registre">Inscrivez-vous ici !</a>
+            </p>
+          </form>
       </div>
-
-      <!-- Password -->
-      <div class="md-form">
-        <input type="password" name="password" [(ngModel)] ="loginUserData.password" id="materialLoginFormPassword" class="form-control">
-        <label for="materialLoginFormPassword">Mot de passe</label>
-      </div>
-
-      <div class="d-flex justify-content-around">
-
-        <div>
-          <!-- Forgot password -->
-          <a  class="forget" href="">Mot de passe oublié ?</a>
-        </div>
-      </div>
-
-      <!-- Sign in button -->
-      <button (click)="loginUser()" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Allez !</button>
-
-      <!-- Register -->
-      <p>Pas encore de compte ?
-        <a class="registre"  routerLink="/registre">Inscrivez-vous ici !</a>
-      </p>
-
-      <!-- Social login -->
-      <p>ou se connecter avec :</p>
-      <a type="button" class="btn-floating btn-fb btn-sm">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a type="button" class="btn-floating btn-tw btn-sm">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a type="button" class="btn-floating btn-li btn-sm">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a type="button" class="btn-floating btn-git btn-sm">
-        <i class="fab fa-github"></i>
-      </a>
-
-    </form>
-    <!-- Form -->
-
   </div>
 
-</div>
-<!-- Material form login -->
-</div>
-</div>
+

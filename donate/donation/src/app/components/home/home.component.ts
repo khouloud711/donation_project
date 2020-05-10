@@ -1,16 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Listdons } from 'src/app/list-dons';
+import { ListDonsService } from '../../services/list-dons.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers:[ListDonsService]
 })
 export class HomeComponent implements OnInit {
+  Listdons: Listdons[];
+  constructor(private router: Router,private ListDonsService: ListDonsService) { }
 
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    this.ListDonsService.getList_dons()
+    .subscribe(Listdons =>
+    this.Listdons = Listdons);
   }
 
   sendMeCategories(){

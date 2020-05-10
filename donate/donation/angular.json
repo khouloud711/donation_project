@@ -27,7 +27,8 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/assets/js/fct.js"
+              "src/assets/js/fct.js",
+              "src/assets/js/form.js"
             ]
           },
           "configurations": {
