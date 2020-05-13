@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -10,7 +10,14 @@ import { AuthService } from 'src/app/services/auth.service';
 export class HeaderComponent implements OnInit {
 
 
-  constructor(private router: Router,public _authService: AuthService) { }
+  constructor(private router: Router,public _authService: AuthService,
+                    private activatedRoute:ActivatedRoute) { }
+
+
+  gotopro(){
+    let id = this.activatedRoute.snapshot.paramMap.get('id');
+    this._authService.getUserProfile(id)
+  }
 
   ngOnInit(): void {
   }

@@ -4,7 +4,7 @@
     <img src="/assets/images/bg.svg">
   </div>
   <div class="login-content">
-    <form action="index.html">
+    <form action="index.html" [formGroup]="signinForm" (ngSubmit)="loginUser()">
       <img src="/assets/images/avatar.svg">
       <h2 class="title">Bienvenu</h2>
              <div class="input-div one">
@@ -13,7 +13,7 @@
                 </div>
                 <div class="div">
                     <h5>E-mail</h5>
-                    <input type="email" name="email" [(ngModel)] ="loginUserData.email" class="input">
+                    <input type="email" formControlName="email" name="email" class="input">
                 </div>
              </div>
              <div class="input-div pass">
@@ -22,12 +22,12 @@
                 </div>
                 <div class="div">
                    <h5>Mot de passe</h5>
-                   <input type="password" name="password" [(ngModel)] ="loginUserData.password" class="input">
+                   <input type="password" formControlName="password" name="password" class="input">
                </div>
             </div>
             <a href="#">Mot de passe oublié ?</a>
 
-            <input type="submit" (click)="loginUser()" class="btn" value="Allez !">
+            <input type="submit"  class="btn" value="Allez !">
             <br>
             <p>Pas encore de compte ?
                 <a   routerLink="/registre">Inscrivez-vous ici !</a>

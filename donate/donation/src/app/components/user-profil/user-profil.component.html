@@ -50,7 +50,7 @@
                       <tr>
                           <th scope="row">1</th>
                           <th>Nom</th>
-                          <td>Bejaoui</td>
+                          <td>{{this.currentUser.lastname}}</td>
                           <td></td>
                           <td>
 
@@ -62,7 +62,7 @@
                       <tr>
                         <th scope="row">1</th>
                         <th>Prénom</th>
-                        <td>Rayen</td>
+                        <td>{{this.currentUser.firstname}}</td>
                         <td></td>
                         <td>
 
@@ -74,7 +74,7 @@
                       <tr>
                         <th scope="row">2</th>
                         <th>Adresse email</th>
-                        <td>rayouna@yahoo.com</td>
+                        <td>{{this.currentUser.email}}</td>
                         <td></td>
                         <td>
                             <a class="teal-text " data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i> </a>
@@ -86,7 +86,7 @@
                       <tr>
                         <th scope="row">3</th>
                         <th>Numéro du téléphone</th>
-                        <td>+216 55235585</td>
+                        <td>{{this.currentUser.number}}</td>
                         <td></td>
                         <td>
 
@@ -187,14 +187,14 @@
         <div class="card-body pt-0 mt-0">
           <!-- Name -->
           <div class="text-center">
-            <h3 class="mb-3 font-weight-bold"><strong>Rayen Bejaoui</strong></h3>
+            <h3 class="mb-3 font-weight-bold"><strong>{{this.currentUser.firstname}} {{this.currentUser.lastname}}</strong></h3>
             <h6 class="font-weight-bold green-text mb-4">Donateur</h6>
           </div>
 
           <ul class="striped list-unstyled">
-            <li><strong>Adresse e-mail:</strong> rayouna@yahoo.com</li>
+            <li><strong>Adresse e-mail:</strong> {{this.currentUser.email}}</li>
 
-            <li><strong>Numéro de télephone:</strong> +216 55235585</li>
+            <li><strong>Numéro de télephone:</strong> {{this.currentUser.number}}</li>
 
             <li><strong></strong> </li>
 
@@ -215,3 +215,4 @@
 </section>
 
 </div>
+

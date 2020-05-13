@@ -2,6 +2,7 @@ const router = require('express').Router();
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const authorize = require('./verifyToken');
 const { registerValidation,loginValidation } = require('../validation');
 
 
@@ -10,8 +11,24 @@ const { registerValidation,loginValidation } = require('../validation');
 
 
 
-router.post('/register',  (req,res) => {
-    let userData = req.body
+router.post('/register',  async (req,res) => {
+
+    
+    //checking if the user is already in the database
+    const emailExist = await User.findOne({email: req.body.email});
+    if(emailExist) return res.status(400).send('email already exists');
+
+    //hash  passwords
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(req.body.password, salt);
+
+    let userData =  new User({
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        email: req.body.email,
+        password: hashedPassword,
+        number: req.body.number
+    });
     let user = new User(userData)
     user.save((error, registeredUser)=>{
         if(error){
@@ -23,23 +40,26 @@ router.post('/register',  (req,res) => {
         }
     })
 })
-
+/************ 
 //login
 
 router.post('/login',  (req,res) => {
     let userData = req.body
-
+ 
+  
     //checking if the email exists
-    User.findOne({email: userData.email}, (error, user)=>{
+    User.findOne({email: userData.email},async (error, user)=>{
+        const validPass = await bcrypt.compare(userData.password, user.password);
+
         if(error){
             console.log(error)
         } else {
             if(!user) {
                 res.status(401).send('Invalid email')
             } else
-            if ( user.password !== userData.password){
-                res.status(401).send('Invalid password')
-            } else {
+            if(!validPass) return res.status(401).send('invalid password');
+
+            else {
                 let payload = { subject: user._id}
                 let token = jwt.sign(payload, 'secretKey')
                 res.status(200).send({token})
@@ -48,9 +68,95 @@ router.post('/login',  (req,res) => {
     });
 
 })
+*/
+router.post("/login", (req, res, next) => {
+    let getUser;
+    User.findOne({
+        email: req.body.email
+    }).then(user => {
+        if (!user) {
+            return res.status(401).json({
+                message: "Authentication failed"
+            });
+        }
+        getUser = user;
+        return bcrypt.compare(req.body.password, user.password);
+    }).then(response => {
+        if (!response) {
+            return res.status(401).json({
+                message: "Authentication failed"
+            });
+        }
+        let jwtToken = jwt.sign({
+            email: getUser.email,
+            userId: getUser._id
+        }, "secretKey", {
+            expiresIn: "1h"
+        });
+        res.status(200).json({
+            token: jwtToken,
+            expiresIn: 3600,
+            _id: getUser._id
+        });
+    }).catch(err => {
+        return res.status(401).json({
+            message: "Authentication failed"
+        });
+    });
+});
 
 
+/*** */
+// Get Users
+router.route('/').get((req, res) => {
+    User.find((error, response) => {
+        if (error) {
+            return next(error)
+        } else {
+            res.status(200).json(response)
+        }
+    })
+})
+// Get Single User
+router.route('/user-profile/:id').get(/*authorize,*/ (req, res, next) => {
+    User.findById(req.params.id, (error, data) => {
+       
+        if (error) {
+            return next(error);
+        } else {
+            res.status(200).json({
+                msg: data
+            })
+        }
+    })
+})
 
+// Update User
+router.route('/update-user/:id').put((req, res, next) => {
+    User.findByIdAndUpdate(req.params.id, {
+        $set: req.body
+    }, (error, data) => {
+        if (error) {
+            return next(error);
+            console.log(error)
+        } else {
+            res.json(data)
+            console.log('User successfully updated!')
+        }
+    })
+})
+// Delete User
+router.route('/delete-user/:id').delete((req, res, next) => {
+    userSchema.findByIdAndRemove(req.params.id, (error, data) => {
+        if (error) {
+            return next(error);
+        } else {
+            res.status(200).json({
+                msg: data
+            })
+        }
+    })
+})
 
 /*
 router.post('/register', async (req,res) => {
