@@ -28,4 +28,8 @@ const ListdonsSchema = mongoose.Schema({
     }*/
 });
 
+/* donation schema user,descrp,categ,image opt */
+/*update user| update  a don */
+/*thabet post hasb user,categorie  */
 const Listdons = module.exports = mongoose.model('Listdons',ListdonsSchema);
+/*nb3th lid fi 3oudh categ */

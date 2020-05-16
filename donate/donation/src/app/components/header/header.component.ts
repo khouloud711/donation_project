@@ -10,16 +10,31 @@ import { AuthService } from 'src/app/services/auth.service';
 export class HeaderComponent implements OnInit {
 
 
+  email: string;
+  firstname: string;
+  lastname:string;
+  number:number;
+
+
+
+  currentUser=   {
+    email:this.email,
+    firstname:this.firstname,
+    lastname:this.lastname,
+    number:this.number
+  };
   constructor(private router: Router,public _authService: AuthService,
-                    private activatedRoute:ActivatedRoute) { }
+                    private activatedRoute:ActivatedRoute) {
 
 
-  gotopro(){
-    let id = this.activatedRoute.snapshot.paramMap.get('id');
-    this._authService.getUserProfile(id)
-  }
+                  }
+
+
+
+
 
   ngOnInit(): void {
+
   }
   sendMeHome(){
     this.router.navigate(['/']);

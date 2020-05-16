@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { User } from '../user';
+import { RequestOptions, Http } from '@angular/http';
 
 @Injectable({
   providedIn: 'root'
@@ -16,11 +17,18 @@ export class AuthService {
   currentUser = {};
 
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient,private _http: Http, private router: Router) { }
 
-  registerUser(user){
-    return this.http.post<any>(this._registerUrl, user)
+  registerUser(user: User): Observable<any> {
+    let api = this._registerUrl;
+    return this.http.post(api, user)
+      .pipe(
+        catchError(this.handleError)
+      )
   }
+  /*registerUser(user){
+    return this.http.post<any>(this._registerUrl, user)
+  }*/
 
  /*loginUser(user){
     return this.http.post<any>(this._loginUrl, user)
@@ -37,6 +45,7 @@ export class AuthService {
       })
   }
 
+
   loggedIn(){
     return !!localStorage.getItem('token');
   }
@@ -51,7 +60,7 @@ export class AuthService {
   }
 
 
-  /******** */
+ /******************************/
 
  // User profile
  getUserProfile(id): Observable<any> {
@@ -77,6 +86,51 @@ handleError(error: HttpErrorResponse) {
   return throwError(msg);
 }
 
+
+/******************************/
+updateFName(id, data): Observable<any> {
+  let url = `${this.endpoint}/update-firstname/${id}`;
+  return this.http.put(url, data, { headers: this.headers }).pipe(
+    catchError(this.errorMgmt)
+  )
+
+}
+updateLName(id, data): Observable<any> {
+  let url = `${this.endpoint}/update-lastname/${id}`;
+  return this.http.put(url, data, { headers: this.headers }).pipe(
+    catchError(this.errorMgmt)
+  )
+
+}
+updateEmail(id, data): Observable<any> {
+  let url = `${this.endpoint}/update-email/${id}`;
+  return this.http.put(url, data, { headers: this.headers }).pipe(
+    catchError(this.errorMgmt)
+  )
+
+}
+updateNumber(id, data): Observable<any> {
+  let url = `${this.endpoint}/update-number/${id}`;
+  return this.http.put(url, data, { headers: this.headers }).pipe(
+    catchError(this.errorMgmt)
+  )
+
+}
+
+// Error handling
+errorMgmt(error: HttpErrorResponse) {
+  let errorMessage = '';
+  if (error.error instanceof ErrorEvent) {
+    // Get client-side error
+    errorMessage = error.error.message;
+  } else {
+    // Get server-side error
+    errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+  }
+  console.log(errorMessage);
+  return throwError(errorMessage);
+}
+/******************************/
 
 
 }

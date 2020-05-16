@@ -11,7 +11,7 @@ module.exports = function (req,res, next) {
     }
     let payload = jwt.verify(token, 'secretKey')
     if(!payload) {
-        return res.status(401).send('Unauthorized request')
+        return res.status(401).send('invalid token')
     }
     req.userId = payload.subject
     next()

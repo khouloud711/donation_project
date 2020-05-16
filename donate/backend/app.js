@@ -20,7 +20,7 @@ dotenv.config();
 //connect to mongoDB
 //hatyt link t3 bd toul ly yji f .env fi3oudh process.env.DB_CONNECT
 mongoose.connect(process.env.MONGODB_URI||'mongodb+srv://khouloud:khouloud12@don-cluster-9nilh.mongodb.net/donBD?retryWrites=true&w=majority',
-    { useNewUrlParser: true , useUnifiedTopology: true }, () =>{
+    { useNewUrlParser: true , useUnifiedTopology: true, useFindAndModify: false }, () =>{
         console.log('connected to db')
     });
 

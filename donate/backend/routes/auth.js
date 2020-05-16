@@ -132,7 +132,7 @@ router.route('/user-profile/:id').get(/*authorize,*/ (req, res, next) => {
 })
 
 // Update User
-router.route('/update-user/:id').put((req, res, next) => {
+/*router.route('/update-user/:id').put((req, res, next) => {
     User.findByIdAndUpdate(req.params.id, {
         $set: req.body
     }, (error, data) => {
@@ -140,11 +140,106 @@ router.route('/update-user/:id').put((req, res, next) => {
             return next(error);
             console.log(error)
         } else {
-            res.json(data)
+            //res.json(data)
+            res.send('user details updated')
             console.log('User successfully updated!')
         }
     })
-})
+})*/
+/*router.put('/update-user/:id', function(req, res){
+    console.log('Update a user');
+    User.findByIdAndUpdate(req.params.id,
+    {
+        $set: req.body
+    },
+    {
+        new: true
+    },
+    function(err, updatedUser){
+        if(err){
+            res.send("Error updating user");
+        }else{
+            res.json(updatedUser);
+        }
+    }
+  
+    );
+  });*/
+/********************************************** */
+// Update user
+/*router.route('/update-user/:id').put((req, res, next) => {
+    User.findByIdAndUpdate(req.params.id, {
+      $set: req.body
+    }, (error, data) => {
+      if (error) {
+        return next(error);
+        console.log(error)
+      } else {
+        res.json(data)
+        console.log('Data updated successfully')
+      }
+    })
+  })*/
+  /*firstname update */
+  router.route('/update-firstname/:id').put((req, res, next) => {
+    User.findByIdAndUpdate(req.params.id, {
+      $set:{ firstname: req.body.firstname}
+    }, (error, data) => {
+      if (error) {
+        return next(error);
+        console.log(error)
+      } else {
+        res.json(data)
+        console.log('firstname updated successfully')
+      }
+    })
+  })
+  /*lastname update */
+  router.route('/update-lastname/:id').put((req, res, next) => {
+    User.findByIdAndUpdate(req.params.id, {
+      $set:{ lastname: req.body.lastname}
+    }, (error, data) => {
+      if (error) {
+        return next(error);
+        console.log(error)
+      } else {
+        res.json(data)
+        console.log('lastname updated successfully')
+      }
+    })
+  })
+  /*email update */
+  router.route('/update-email/:id').put((req, res, next) => {
+    User.findByIdAndUpdate(req.params.id, {
+      $set:{ email: req.body.email}
+    }, (error, data) => {
+      if (error) {
+        return next(error);
+        console.log(error)
+      } else {
+        res.json(data)
+        console.log('email updated successfully')
+      }
+    })
+  })
+  /*numero update */
+  router.route('/update-number/:id').put((req, res, next) => {
+    User.findByIdAndUpdate(req.params.id, {
+      $set:{ number: req.body.number}
+    }, (error, data) => {
+      if (error) {
+        return next(error);
+        console.log(error)
+      } else {
+        res.json(data)
+        console.log('number updated successfully')
+      }
+    })
+  })
+
+/************************** */
+
+
 // Delete User
 router.route('/delete-user/:id').delete((req, res, next) => {
     userSchema.findByIdAndRemove(req.params.id, (error, data) => {

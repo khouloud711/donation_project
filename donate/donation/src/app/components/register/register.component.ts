@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { User } from '../../user';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -26,12 +27,33 @@ export class RegisterComponent implements OnInit {
 
 
 
+  signupForm: FormGroup;
 
-  constructor(private router: Router, private _auth: AuthService) { }
+  constructor(private router: Router, private _auth: AuthService,
+                              public fb: FormBuilder) {
+
+                                this.signupForm = this.fb.group({
+                                  firstname: [''],
+                                  lastname: [''],
+                                  email: [''],
+                                  number: [''],
+                                  password: ['']
+                                })
+                              }
 
   ngOnInit(): void {
   }
-  registerUser(){
+  registerUser() {
+    this._auth.registerUser(this.signupForm.value).subscribe((res) => {
+      if (res.result) {
+        this.signupForm.reset()
+        localStorage.setItem('token', res.token)
+
+      }
+      this.router.navigate(['/login'])
+    })
+  }
+  /*registerUser(){
     this._auth.registerUser(this.registerUserData)
       .subscribe(
         res => {
@@ -41,7 +63,8 @@ export class RegisterComponent implements OnInit {
         },
         err => console.log(err)
       )
-  }
+  }*/
+
   /*registerUser(){
     const newUser={
       firstname:this.firstname,
