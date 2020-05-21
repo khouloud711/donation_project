@@ -10,9 +10,10 @@ import { RequestOptions, Http } from '@angular/http';
   providedIn: 'root'
 })
 export class AuthService {
-  private _registerUrl = "http://localhost:3000/api/register";
-  private _loginUrl = "http://localhost:3000/api/login";
-  endpoint: string = "http://localhost:3000/api";
+  private _registerUrl = "https://donation-app1.herokuapp.com/api/register";
+  private _loginUrl = "https://donation-app1.herokuapp.com/api/login";
+  private _currentUser = "http://localhost:3000/api/"
+  endpoint: string = "https://donation-app1.herokuapp.com/api";
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser = {};
 
@@ -85,7 +86,11 @@ handleError(error: HttpErrorResponse) {
   }
   return throwError(msg);
 }
+/******************************/
 
+getCurrentuser():Observable<any>{
+ return this.http.get<any>(this._currentUser, {headers: this.headers})
+}
 
 /******************************/
 updateFName(id, data): Observable<any> {

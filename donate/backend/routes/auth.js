@@ -2,13 +2,28 @@ const router = require('express').Router();
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const authorize = require('./verifyToken');
+const verify = require('./verifyToken');
 const { registerValidation,loginValidation } = require('../validation');
 
 
 
 
+/********* */
+router.get('/currentUser',(req,res)=>{
+    try{
+      const user= User.findOne(
+        {
+          _id:req.body.id
+        }
+      );
+      res.json(user);
 
+    }catch (err){
+      res.json({message:err});
+      console.log(err);
+    }
+})
+/********* */
 
 
 router.post('/register',  async (req,res) => {
@@ -118,7 +133,7 @@ router.route('/').get((req, res) => {
     })
 })
 // Get Single User
-router.route('/user-profile/:id').get(/*authorize,*/ (req, res, next) => {
+router.route('/user-profile/:id').get(/*verify,*/ (req, res, next) => {
     User.findById(req.params.id, (error, data) => {
        
         if (error) {
@@ -180,6 +195,7 @@ router.route('/user-profile/:id').get(/*authorize,*/ (req, res, next) => {
       }
     })
   })*/
+  
   /*firstname update */
   router.route('/update-firstname/:id').put((req, res, next) => {
     User.findByIdAndUpdate(req.params.id, {
@@ -311,4 +327,27 @@ res.header('auth-token', token).send(token);
 });
 */
 
+
+
+  /* ================================================
+  MIDDLEWARE - Used to grab user's token from headers
+  ================================================ */
+  router.use((req, res, next) => {
+    const token = req.headers['authorization']; // Create token found in headers
+    // Check if token was found in headers
+    if (!token) {
+      res.json({ success: false, message: 'No token provided' }); // Return error
+    } else {
+      // Verify the token is valid
+      jwt.verify(token, config.secret, (err, decoded) => {
+        // Check if error is expired or invalid
+        if (err) {
+          res.json({ success: false, message: 'Token invalid: ' + err }); // Return error for token validation
+        } else {
+          req.decoded = decoded; // Create global variable to use in any request beyond
+          next(); // Exit middleware
+        }
+      });
+    }
+  });
 module.exports = router;

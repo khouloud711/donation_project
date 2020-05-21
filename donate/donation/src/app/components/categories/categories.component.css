@@ -1,6 +1,7 @@
 section{
   margin: 0 !important;
   padding: 0 !important;
+
   min-height: 100vh !important;
   background: #fff !important;
   display: flex !important;
@@ -96,6 +97,7 @@ section{
 
 .container .card .face.face2 .content a{
   margin:15px 0 0 ;
+  margin-left: 50px;
   display:inline-block !important;
   text-decoration: none !important;
   font-weight: 900 !important;
