@@ -1,10 +1,10 @@
-/*const router = require('express').Router();
 const Category = require('../models/Category');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const verify = require('./verifyToken');
+const router = require('express').Router();
 
-
+/*
 // get the list of the category
 router.get('/',verify, function(req, res) {
     var token = getToken(req.headers);
@@ -30,7 +30,7 @@ router.get('/:id', verify, function(req, res, next) {
     }
   });
 //put a category by ID
-router.put('/:id', authoriverifyze, function(req, res, next) {
+router.put('/:id', function(req, res, next) {
     var token = getToken(req.headers);
     if (token) {
       Category.findByIdAndUpdate(req.params.id, req.body, function (err, category) {
@@ -53,3 +53,25 @@ router.put('/:id', authoriverifyze, function(req, res, next) {
       return res.status(403).send({success: false, msg: 'Unauthorized.'});
     }
   });*/
+
+
+  router.post('/save' , async (req,res)=>{
+    
+      try {
+        
+          const cat =  new Category({
+            catName : req.body.catName
+          })
+          
+          const result = await cat.save(); 
+          res.status(200).json(result) ; 
+      }
+      catch (err){
+        res.status(409).json({message : "3andek mochkla base "})
+      }
+
+
+  })
+
+ 
+  module.exports = router;

@@ -12,7 +12,7 @@ var app = express();
 //import routes
 const postsRoute = require('./routes/posts');
 const  authRoute = require('./routes/auth');
-
+const categoryRoute = require ('./routes/category')
 
 dotenv.config();
 
@@ -30,7 +30,6 @@ mongoose.connect(process.env.MONGODB_URI||'mongodb+srv://khouloud:khouloud12@don
 /*mongoose.connection.on('connected',()=>{
     console.log('connected to database mongodb @ 27017')
 });
-
 mongoose.connection.on('error',(err)=>{
     if(err){
         console.log('error in database connection'+ err);
@@ -51,8 +50,9 @@ app.use(bodyparser.json());
 app.use(express.static(path.join(__dirname,'public')));
 
 //routes
-app.use('/api/', postsRoute);
-app.use('/api/', authRoute);
+app.use('/api', postsRoute);
+app.use('/api', authRoute);
+app.use('/api/category', categoryRoute);
 
 //testing server
 app.get('/',(req,res)=>{

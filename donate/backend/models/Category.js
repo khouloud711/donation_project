@@ -1,4 +1,4 @@
-/*var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
 var CategorySchema = new mongoose.Schema({
   id: String,
@@ -9,4 +9,4 @@ var CategorySchema = new mongoose.Schema({
   //updated: { type: Date, default: Date.now },
 });
 
-module.exports = mongoose.model('Category', CategorySchema);*/
+module.exports = mongoose.model('Category', CategorySchema);

@@ -1,12 +1,10 @@
+ 
 const mongoose = require('mongoose');
 
 
 const ListdonsSchema = mongoose.Schema({
-    //_id: mongoose.Schema.Types.ObjectId,
-    categ:{
-        type: String,
-        required:true
-    },
+    
+    categ:{type: mongoose.Schema.Types.ObjectId, ref: 'Category' , required : true },
    /* nom:{
         type: String,
         required:true
@@ -15,7 +13,7 @@ const ListdonsSchema = mongoose.Schema({
         type: String,
         required:true
     },*/
-    user : { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    user : { type: mongoose.Schema.Types.ObjectId, ref: 'User' , required : true },
     createdBy: { type: String },
     createdAt: { type: Date, default: Date.now() },
     /*numero:{
@@ -32,9 +30,4 @@ const ListdonsSchema = mongoose.Schema({
 });
 
 
-const Listdons = module.exports = mongoose.model('Listdons',ListdonsSchema);
-
-
-
-
-
+ module.exports = mongoose.model('Listdons',ListdonsSchema);

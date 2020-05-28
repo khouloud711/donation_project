@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Listdons } from '../../list-dons';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ListDonsService } from '../../services/list-dons.service';
+import { User } from 'src/app/user';
 
 @Component({
   selector: 'app-liste-dons',
@@ -11,6 +12,7 @@ import { ListDonsService } from '../../services/list-dons.service';
 })
 export class ListeDonsComponent implements OnInit {
   Listdons: Listdons[];
+  user: User[];
 
 
   constructor(private router: Router,private route: ActivatedRoute,private ListDonsService: ListDonsService) { }

@@ -1,3 +1,5 @@
+import { User } from './user';
+
 export class Listdons{
   _id?: string;
   categ:string;
@@ -5,5 +7,6 @@ export class Listdons{
   prenom: string;
   numero: number;
   description: string;
+  user : User;
   /*img:ImageData;*/
 }
