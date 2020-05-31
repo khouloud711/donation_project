@@ -1,3 +1,4 @@
+<!--
 <br>
 <section >
 
@@ -54,8 +55,40 @@
   </div>
   </div>
 </section>
+-->
+<br>
+<br>
+
+
+<section >
+
+  <div class="jumbotron">
+<div class="box">
+<form (submit)="addDon()">
+
+  <br>
+  <br>
+      <select name="type" class="app-select form-control "  [(ngModel)]="categorySelected" name="categorySelected"   required>
+
+      <option value="categ.catName" *ngFor="let categ of Category" >{{categ.catName}}</option>
+
+        </select>
+
+
+        <div class="inputBox">
+          <textarea class="" name="description" [(ngModel)]="description" required></textarea>
+          <label class="">Description</label>
+
+      </div>
+
+      <label  class="labelfile"for="file">Mettre l'image de ce que tu vas donner: </label>
+
+      <input type="file" name="file" id="file" class="inputfile"   />
 
 
 
-
-
+  <input class="btn" type="submit" value="Confirmer" >
+</form>
+</div>
+</div>
+</section>

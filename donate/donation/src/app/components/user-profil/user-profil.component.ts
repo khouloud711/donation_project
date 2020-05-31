@@ -5,6 +5,8 @@ import { ListDonsService } from 'src/app/services/list-dons.service';
 import { Listdons } from 'src/app/list-dons';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { User } from 'src/app/user';
+import { CategoryService } from '../../services/category.service';
+import { Category } from 'src/app/category';
 
 @Component({
   selector: 'app-user-profil',
@@ -19,9 +21,12 @@ export class UserProfilComponent implements OnInit {
   editNumber: FormGroup;
   editEmail: FormGroup;
 
+  editDesc: FormGroup;
+  editCateg: FormGroup;
+  categorySelected:string;
 
   userData: User[];
-
+  user: User[];
 
 
   email: string;
@@ -34,6 +39,8 @@ export class UserProfilComponent implements OnInit {
     //password:this.password
   }
   Listdons: Listdons[];
+  Category: Category[];
+
 
   currentUser=   {
     email:this.email,
@@ -45,6 +52,7 @@ export class UserProfilComponent implements OnInit {
 
   constructor(private router: Router,public _authService: AuthService,
               private ListDonsService: ListDonsService,
+              private CategoryService: CategoryService,
               private activatedRoute: ActivatedRoute,
               public fb: FormBuilder) {
 
@@ -58,12 +66,16 @@ export class UserProfilComponent implements OnInit {
                   firstname: [''],
                   lastname: [''],
                   email: [''],
-                  number: ['']
+                  number: [''],
+                  description:[''],
+                  categorySelected:['']
                 })
                 this.editFName = this.fb.group({firstname: ['']})
                 this.editLName = this.fb.group({lastname: ['']})
                 this.editEmail = this.fb.group({email: ['']})
                 this.editNumber = this.fb.group({number: ['']})
+                this.editCateg = this.fb.group({categorySelected: ['']})
+                this.editDesc = this.fb.group({description: ['']})
               }
 
 
@@ -72,8 +84,19 @@ export class UserProfilComponent implements OnInit {
 
   ngOnInit() {
     this.ListDonsService.getList_dons()
-    .subscribe(Listdons =>
-    this.Listdons = Listdons);
+    .subscribe(Listdons =>{
+      console.log('Dons'+ JSON.stringify(Listdons))
+      this.Listdons = Listdons
+    });
+
+
+
+    this.CategoryService.getCategories()
+    .subscribe(Category =>{
+      console.log('data'+ JSON.stringify(Category))
+    this.Category = Category
+
+    });
   }
 
   /*updateUser() {
@@ -87,7 +110,7 @@ export class UserProfilComponent implements OnInit {
 
 
 
-
+/*************Update a user infos********************** */
 
   updateFName(){
     if (!this.editFName.valid) {
@@ -105,7 +128,6 @@ export class UserProfilComponent implements OnInit {
       }
     }
   }
-/**** */
 updateLName(){
   if (!this.editLName.valid) {
     return false;
@@ -122,7 +144,6 @@ updateLName(){
     }
   }
 }
-/****** */
 updateEmail(){
   if (!this.editEmail.valid) {
     return false;
@@ -139,7 +160,6 @@ updateEmail(){
     }
   }
 }
-/******* */
 updateNumber(){
   if (!this.editNumber.valid) {
     return false;
@@ -156,4 +176,40 @@ updateNumber(){
     }
   }
 }
+
+
+/***************Update a don*************** */
+updateDescription(){
+  if (!this.editDesc.valid) {
+    return false;
+  } else {
+    if (window.confirm('Are you sure?')) {
+      let id = this.activatedRoute.snapshot.paramMap.get('id');/*lezmni id mta3 don adheka*/
+      this.ListDonsService.updateDescription(id, this.editDesc.value)
+        .subscribe(res => {
+          this.router.navigate[('')];
+          alert('Content updated successfully!')
+        }, (error) => {
+          console.log(error)
+        })
+    }
+  }
+}
+updateCateg(){
+  if (!this.editCateg.valid) {
+    return false;
+  } else {
+    if (window.confirm('Are you sure?')) {
+      let id = this.activatedRoute.snapshot.paramMap.get('id');/*lezmni id mta3 don adheka*/
+      this.ListDonsService.updateCateg(id, this.editCateg.value)
+        .subscribe(res => {
+          this.router.navigate[('')];
+          alert('Content updated successfully!')
+        }, (error) => {
+          console.log(error)
+        })
+    }
+  }
+}
+
 }

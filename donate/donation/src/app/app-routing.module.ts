@@ -27,7 +27,8 @@ const routes: Routes = [
 
   { path:'Contact', component:ContactComponent},
 
-  { path:'listeDons', component:ListeDonsComponent},
+  { path:'listeDons', component:ListeDonsComponent,
+                      canActivate: [AuthGuard]},
 
   { path:'login', component:LoginComponent},
   { path:'registre', component:RegisterComponent},

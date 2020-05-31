@@ -73,5 +73,12 @@ router.put('/:id', function(req, res, next) {
 
   })
 
+  //retreiving categories
+router.get('/categories', (req,res,next)=>{
+  Category.find(function(err,categ){
+    
+      res.json(categ);
+  })
+});
  
   module.exports = router;

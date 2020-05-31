@@ -4,8 +4,23 @@ const verify = require('./verifyToken');
 const User = require('../models/User');
 const Listdons = require('../models/list-d');
 const Category = require('../models/Category')
+
 //retreiving list dons
-router.get('/list_dons',(req,res,next)=>{
+router.get('/list_dons/home', (req,res,next)=>{
+  Listdons.find(function(err,list_dons){
+    
+      res.json(list_dons);
+  })
+  .populate("user")
+  .populate("categ")
+  .then(function(don) {
+ 
+    res.json(don);
+  })
+});
+
+//retreiving list dons
+router.get('/list_dons',verify , (req,res,next)=>{
     Listdons.find(function(err,list_dons){
       
         res.json(list_dons);
@@ -26,27 +41,82 @@ router.post('/donner', async (req,res,next)=>{
   const user  = await User.findOne({
     _id  : req.body.user
  }) 
+ try{
     let newlist_dons = new Listdons({
-      /*categ: req.body.categ,
-      nom: req.body.nom,
-      prenom: req.body.prenom,
-      numero: req.body.numero,*/
       categ: category._id,
       user: user._id, 
       description: req.body.description
-      /*img:req.body.img*/
-    });
-
-    newlist_dons.save((err,list_don)=>{
-        if(err){
-            res.json({msg:'failed to add '});
-        }else{
-            res.json({msg:'don added successfully'});
-        }
-    });
+    })
+ 
+  
+    const result = await newlist_dons.save()
+      res.json({msg:'don added successfully'});
+    }
+  
+ 
+  catch (err) {
+      console.log('err' + err);
+      res.status(500).send(err);
+    }
 });
 
+/*don updating */
 
+  /*description update */
+  router.route('/update-description/:id').put((req, res, next) => {
+    Listdons.findByIdAndUpdate(req.params.id, {
+      $set:{ description: req.body.description}
+    }, (error, data) => {
+      if (error) {
+        return next(error);
+        console.log(error)
+      } else {
+        res.json(data)
+        console.log('description updated successfully')
+      }
+    })
+  })
+
+  /*category update */
+  router.route('/update-categ/:id').put(async (req, res, next) => {
+    const category = await Category.findOne({
+      _id : req.body.categ
+    })
+    try {
+      Listdons.findByIdAndUpdate(req.params.id, {
+      $set:{ categ: category._id}
+    }, (error, data) => {
+      if (error) {
+        return next(error);
+        console.log(error)
+      } else {
+        res.json(data)
+        console.log('category updated successfully')
+      }
+    })
+  }
+    catch (err) {
+      console.log('err' + err);
+      res.status(500).send(err);
+    }
+    
+  })
+
+  router.get("/don/:id", function(req, res) {
+
+    Listdons.findOne({ _id: req.params.id })
+      // ..and populate all of the notes associated with it
+      .populate("user")
+      .populate("categ")
+      .then(function(don) {
+        // If we were able to successfully find a don with the given id, send it back to the client
+        res.json(don);
+      })
+      .catch(function(err) {
+        // If an error occurred, send it to the client
+        res.json(err);
+      });
+  });
 
   /**************** */
 
@@ -69,7 +139,6 @@ router.post('/donner', async (req,res,next)=>{
     {
       res.status(409)
       .json({message : 'user not exist'})
-
     }*/
     const category = await Category.findOne({
       _id : req.body.categ
@@ -94,23 +163,15 @@ router.post('/donner', async (req,res,next)=>{
   });
   
 
-router.get("/don/:id", function(req, res) {
 
-  Listdons.findOne({ _id: req.params.id })
-    // ..and populate all of the notes associated with it
-    .populate("user")
-    .populate("categ")
-    .then(function(don) {
-      // If we were able to successfully find a don with the given id, send it back to the client
-      res.json(don);
-    })
-    .catch(function(err) {
-      // If an error occurred, send it to the client
-      res.json(err);
-    });
-});
 
 module.exports =  router;
+
+
+
+
+
+
 
 
 /*

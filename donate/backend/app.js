@@ -50,9 +50,9 @@ app.use(bodyparser.json());
 app.use(express.static(path.join(__dirname,'public')));
 
 //routes
-app.use('/api', postsRoute);
-app.use('/api', authRoute);
-app.use('/api/category', categoryRoute);
+app.use('/post', postsRoute);
+app.use('/auth', authRoute);
+app.use('/category', categoryRoute);
 
 //testing server
 app.get('/',(req,res)=>{

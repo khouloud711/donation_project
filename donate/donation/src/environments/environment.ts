@@ -3,6 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  apiUrl : 'http://localhost:3000' ,
+  domainName : 'localhost:3000' ,
+  //apiUrl : 'https://donation-app1.herokuapp.com' ,
+  //domainName : 'donation-app1.herokuapp.com' ,
+
   production: false
 };
 

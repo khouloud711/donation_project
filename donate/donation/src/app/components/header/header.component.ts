@@ -56,7 +56,7 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/Contact']);
   }
 
-  /*sendMeList_livres(){
-    this.router.navigate(['/list_livres']);
-  }*/
+  sendMeProfile(){
+    this.router.navigate(['/user-profile/'+ this._authService.getId()]);
+  }
 }

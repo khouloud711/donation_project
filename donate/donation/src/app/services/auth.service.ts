@@ -5,16 +5,21 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { User } from '../user';
 import { RequestOptions, Http } from '@angular/http';
+import { environment } from 'src/environments/environment';
+
+const apiUrl = environment.apiUrl ;
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private _registerUrl = "https://donation-app1.herokuapp.com/api/register";
-  private _loginUrl = "https://donation-app1.herokuapp.com/api/login";
-  private _currentUser = "http://localhost:3000/api/"
-  endpoint: string = "https://donation-app1.herokuapp.com/api";
+  private _registerUrl = apiUrl+"/auth/register";
+  private _loginUrl = apiUrl+"/auth/login";
+  private _currentUser = apiUrl+"/auth/"
+  endpoint: string = apiUrl+"/auth";
+
   headers = new HttpHeaders().set('Content-Type', 'application/json');
+
   currentUser = {};
 
 
@@ -39,9 +44,11 @@ export class AuthService {
     return this.http.post<any>(this._loginUrl, user)
       .subscribe((res: any) => {
         localStorage.setItem('token', res.token)
+        localStorage.setItem('_id',res._id)
         this.getUserProfile(res._id).subscribe((res) => {
           this.currentUser = res;
           this.router.navigate(['user-profile/' + res.msg._id]);
+
         })
       })
   }
@@ -58,6 +65,9 @@ export class AuthService {
 
   getToken(){
     return localStorage.getItem('token');
+  }
+  getId(){
+    return  localStorage.getItem('_id');
   }
 
 

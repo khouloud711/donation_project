@@ -106,11 +106,11 @@ router.post("/login", (req, res, next) => {
             email: getUser.email,
             userId: getUser._id
         }, "secretKey", {
-            expiresIn: "1h"
+            //expiresIn: "1h"
         });
         res.status(200).json({
             token: jwtToken,
-            expiresIn: 3600,
+            //expiresIn: 3600,
             _id: getUser._id
         });
     }).catch(err => {
@@ -133,7 +133,7 @@ router.route('/').get((req, res) => {
     })
 })
 // Get Single User
-router.route('/user-profile/:id').get(/*verify,*/ (req, res, next) => {
+router.route('/user-profile/:id').get(verify, (req, res, next) => {
     User.findById(req.params.id, (error, data) => {
        
         if (error) {

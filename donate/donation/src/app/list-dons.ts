@@ -1,12 +1,17 @@
 import { User } from './user';
+import { Category } from './category';
 
 export class Listdons{
   _id?: string;
-  categ:string;
-  nom: string;
-  prenom: string;
-  numero: number;
+  categ: Category;
   description: string;
   user : User;
-  /*img:ImageData;*/
+/*img:ImageData;*/
+
+
+ /* nom: string;
+  prenom: string;
+  numero: number;*/
+
+
 }

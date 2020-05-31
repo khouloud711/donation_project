@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router,private ListDonsService: ListDonsService) { }
 
   ngOnInit() {
-    this.ListDonsService.getList_dons()
+    this.ListDonsService.getHomeList_dons()
     .subscribe(Listdons =>
     this.Listdons = Listdons);
   }
